@@ -1,0 +1,33 @@
+.header {
+  color: $cl-white;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: $fw-bold;
+}
+
+.side-text {
+  color: $cl-slate;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: $fw-normal;
+}
+
+.button-text {
+  color: $cl-white;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: $fw-medium;
+
+  &--navy {
+    color: $cl-navy;
+  }
+}
+
+.card-header {
+  color: $cl-navy;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: $fw-s-bold;
+}
+
+.card-side-text {
+  color: $cl-slate;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: $fw-medium;
+}
