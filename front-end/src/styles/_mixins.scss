@@ -5,7 +5,7 @@
   $flex: row
 ) {
   align-items: $align;
-  display: $display !important;
+  display: $display;
   flex-direction: $flex;
   justify-content: $justify;
 }
