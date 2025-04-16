@@ -1,0 +1,80 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.navigation {
+  @include setDisplay(flex, center, space-between, row);
+  padding: clamp(12px, 2vh, 20px) clamp(16px, 5vw, 60px);
+  background-color: $cl-turquoise;
+  text-transform: capitalize;
+
+  .burger {
+    @include setDisplay(none, center, center, column);
+    gap: 5px;
+
+    div {
+      width: 30px;
+      height: 4px;
+      background-color: $cl-white;
+      border-radius: 99px;
+    }
+  }
+
+  &__logo {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: $fw-bold;
+  }
+
+  &__logo a,
+  &__menu a {
+    color: $cl-white;
+  }
+
+  &__menu {
+    @include setDisplay(flex, center, center, row);
+    gap: 45px;
+
+    ul {
+      @include setDisplay(flex, center, center, row);
+      list-style-type: none;
+      gap: 30px;
+      font-weight: $fw-medium;
+    }
+
+    .btn-white {
+      color: $cl-navy;
+    }
+  }
+}
+
+@media (width <= 992px) {
+  .navigation {
+    align-items: center;
+
+    .burger {
+      display: flex;
+    }
+
+    &__menu {
+      flex-direction: column;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $cl-turquoise;
+      z-index: -1;
+      width: 100%;
+      justify-content: space-evenly;
+      transform: translate(-105%);
+      @include setTransition();
+
+      ul {
+        flex-direction: column;
+        font-size: 18px;
+      }
+
+      &--expanded {
+        transform: translate(0);
+      }
+    }
+  }
+}
