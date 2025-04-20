@@ -1,0 +1,20 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__card-image {
+    @include setDisplay();
+    width: 100px;
+    height: 100px;
+    background-color: $cl-black-faint;
+    border-radius: 99px;
+
+    img {
+      width: 60px;
+    }
+  }
+}
