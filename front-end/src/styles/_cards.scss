@@ -1,0 +1,22 @@
+@import "mixins";
+@import "variables";
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  height: 100%;
+}
+
+.card {
+  @include setDisplay(flex, start, start, column);
+  background-color: $cl-white;
+  box-shadow: 0 10px 60px $cl-navy-light;
+  padding: 15px;
+  gap: 15px;
+  border-radius: 20px;
+
+  &--apart {
+    background-color: $cl-orange;
+  }
+}
