@@ -3,7 +3,6 @@ import AppRoutes from "@routes/AppRoutes";
 
 import { Navigation } from "@components/layout/navigation/Navigation";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/main.scss";
 
 function App() {
