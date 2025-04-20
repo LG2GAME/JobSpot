@@ -6,10 +6,12 @@
   padding: clamp(12px, 2vh, 20px) clamp(16px, 5vw, 60px);
   background-color: $cl-turquoise;
   text-transform: capitalize;
+  height: 12vh;
 
   .burger {
     @include setDisplay(none, center, center, column);
     gap: 5px;
+    z-index: 2;
 
     div {
       width: 30px;
@@ -21,6 +23,7 @@
 
   &__logo {
     font-size: clamp(24px, 4vw, 36px);
+    z-index: 2;
     font-weight: $fw-bold;
   }
 
@@ -32,6 +35,7 @@
   &__menu {
     @include setDisplay(flex, center, center, row);
     gap: 45px;
+    font-size: clamp(12px, 2.5vw, 16px);
 
     ul {
       @include setDisplay(flex, center, center, row);
@@ -40,7 +44,7 @@
       font-weight: $fw-medium;
     }
 
-    .btn-white {
+    .button-text--navy {
       color: $cl-navy;
     }
   }
@@ -55,21 +59,26 @@
     }
 
     &__menu {
+      @include setTransition();
+      background-color: $cl-turquoise;
       flex-direction: column;
       height: 100vh;
+      left: 0;
       position: absolute;
       top: 0;
-      left: 0;
-      background-color: $cl-turquoise;
-      z-index: -1;
-      width: 100%;
-      justify-content: space-evenly;
+      padding: 60px 0;
       transform: translate(-105%);
-      @include setTransition();
+      width: 100%;
 
       ul {
         flex-direction: column;
         font-size: 18px;
+        gap: 45px;
+
+        &:nth-child(1) {
+          font-size: 24px;
+          height: 100%;
+        }
       }
 
       &--expanded {

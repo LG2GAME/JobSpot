@@ -1,11 +1,10 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
 
 import "./Navigation.scss";
 
 export const Navigation = () => {
-  const [expandedMenu, setExpandedMenu] = useState(true);
+  const [expandedMenu, setExpandedMenu] = useState(false);
 
   const Burger = () => (
     <div className="burger" onClick={() => setExpandedMenu(!expandedMenu)}>
@@ -41,16 +40,12 @@ export const Navigation = () => {
           </li>
         </ul>
         <ul>
-          <li>
-            <Link to="/" className="btn btn-white">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="btn btn-w30">
-              Rejestracja
-            </Link>
-          </li>
+          <Link to="/" className="btn btn-white button-text button-text--navy">
+            Login
+          </Link>
+          <Link to="/" className="btn btn-w30">
+            Rejestracja
+          </Link>
         </ul>
       </nav>
     </div>
