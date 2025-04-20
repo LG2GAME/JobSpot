@@ -1,16 +1,21 @@
+@import "mixins";
 @import "variables";
 
 .btn {
   padding: clamp(10px, 2vh, 15px) clamp(45px, 6vw, 60px);
   border-radius: 99px;
   font-weight: $fw-medium;
+  @include setTransition();
 
   &-white {
     background-color: $cl-white;
-    color: $cl-navy;
   }
 
   &-w30 {
     background-color: $cl-white-semi;
+  }
+
+  &:hover {
+    @include setScale(1.025);
   }
 }

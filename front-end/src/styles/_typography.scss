@@ -1,7 +1,28 @@
-.header {
-  color: $cl-white;
+.header-container {
+  text-align: center;
+}
+
+.hero-text {
+  color: #fff;
   font-size: clamp(36px, 4vw, 48px);
   font-weight: $fw-bold;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+
+  &--orange {
+    color: $cl-orange;
+  }
+}
+
+.header {
+  color: $cl-navy;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: $fw-bold;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  text-transform: capitalize;
+
+  &--orange {
+    color: $cl-orange;
+  }
 }
 
 .side-text {
@@ -12,7 +33,7 @@
 
 .button-text {
   color: $cl-white;
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(12px, 2.5vw, 16px);
   font-weight: $fw-medium;
 
   &--navy {
@@ -24,6 +45,7 @@
   color: $cl-navy;
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: $fw-s-bold;
+  text-transform: capitalize;
 }
 
 .card-side-text {
