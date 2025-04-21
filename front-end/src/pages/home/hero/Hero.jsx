@@ -18,7 +18,7 @@ export const Hero = () => (
         <Link to="/" className="btn btn-white">
           Dołącz za darmo!
         </Link>
-        <Link to="/" className="btn btn-w30 button-text">
+        <Link to="/career" className="btn btn-w30 button-text">
           Znajdź pracę
         </Link>
       </div>
