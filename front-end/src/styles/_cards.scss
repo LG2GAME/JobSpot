@@ -11,7 +11,7 @@
 .card {
   @include setDisplay(flex, start, start, column);
   background-color: $cl-white;
-  box-shadow: 0 10px 60px $cl-navy-light;
+  box-shadow: 0 0 10px $cl-navy-light;
   padding: 15px;
   gap: 15px;
   border-radius: 20px;
