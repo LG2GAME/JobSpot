@@ -1,0 +1,24 @@
+@import "@styles/mixins";
+
+.opinions {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__card {
+    &-header {
+      @include setDisplay(flex, center, space-between, row);
+      width: 100%;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+
+        &:nth-child(1) {
+          border-radius: 99px;
+        }
+      }
+    }
+  }
+}
