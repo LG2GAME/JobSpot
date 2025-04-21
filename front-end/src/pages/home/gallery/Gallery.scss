@@ -1,0 +1,72 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.gallery {
+  @include setDisplay(flex, center, center, column);
+  gap: 60px;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__controls {
+    @include setDisplay(flex, center, space-between, row);
+
+    &-filters {
+      @include setDisplay();
+      gap: 15px;
+
+      a {
+        cursor: pointer;
+      }
+
+      .filter-selected {
+        color: $cl-orange;
+        outline: 3px solid $cl-orange;
+      }
+    }
+
+    &-buttons {
+      @include setDisplay();
+      gap: 30px;
+
+      a {
+        @include setDisplay();
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border: 3px solid $cl-orange;
+        cursor: pointer;
+
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 1200px) {
+  .gallery__controls {
+    flex-direction: column;
+    gap: 30px;
+
+    &-filters {
+      margin-right: auto;
+    }
+
+    &-buttons {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (width <= 992px) {
+  .gallery__controls-filters {
+    flex-wrap: wrap;
+  }
+}
