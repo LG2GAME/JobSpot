@@ -1,0 +1,40 @@
+@import "@styles/mixins";
+
+.help {
+  @include setDisplay(flex, center, center, row);
+  @include minHeight(100vh);
+
+  &__content,
+  &__image {
+    height: 100%;
+    width: 50%;
+  }
+
+  &__content {
+    @include setDisplay(flex, start, center, column);
+    gap: 30px;
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (width <= 992px) {
+  .help {
+    &__content {
+      align-items: center;
+      width: 100%;
+
+      &-buttons {
+        flex-direction: column;
+      }
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
