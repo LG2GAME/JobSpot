@@ -1,0 +1,43 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.footer {
+  background-color: $cl-turquoise;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &-logo {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: $fw-bold;
+
+    a {
+      color: $cl-white;
+    }
+  }
+
+  &-item {
+    @include setDisplay(flex, start, start, column);
+    gap: 15px;
+
+    .footer-socials {
+      @include setDisplay(flex, start, start, row);
+      gap: 10px;
+
+      img {
+        width: 35px;
+      }
+    }
+
+    &-header {
+      color: $cl-white;
+      font-size: clamp(16px, 2.5vw, 20px);
+      text-transform: uppercase;
+    }
+  }
+
+  &-more {
+    @include setDisplay(flex, center, space-between, row);
+  }
+}
