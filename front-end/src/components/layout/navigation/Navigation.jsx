@@ -16,7 +16,7 @@ export const Navigation = () => {
 
   return (
     <div className="navigation">
-      <p className="navigation__logo">
+      <p className="navigation-logo">
         <Link to="/">JobSpot</Link>
       </p>
       <Burger />
@@ -30,13 +30,13 @@ export const Navigation = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="navigation__menu-item">
-            <Link to="/">Kariera</Link>
+            <Link to="/career">Kariera</Link>
           </li>
           <li className="navigation__menu-item">
-            <Link to="/">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li className="navigation__menu-item">
-            <Link to="/">O nas</Link>
+            <Link to="/about-us">O nas</Link>
           </li>
         </ul>
         <ul>

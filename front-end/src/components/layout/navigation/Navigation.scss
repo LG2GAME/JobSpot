@@ -21,13 +21,13 @@
     }
   }
 
-  &__logo {
+  &-logo {
     font-size: clamp(24px, 4vw, 36px);
     z-index: 2;
     font-weight: $fw-bold;
   }
 
-  &__logo a,
+  &-logo a,
   &__menu a {
     color: $cl-white;
   }
