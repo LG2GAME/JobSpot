@@ -9,10 +9,29 @@
 
   &-white {
     background-color: $cl-white;
+
+    &-sh {
+      box-shadow: 0 10px 60px $cl-navy-light;
+    }
+
+    &-br {
+      border: 3px solid $cl-orange;
+      color: $cl-orange;
+      padding: clamp(5px, 1.5vh, 8px) clamp(23px, 4vw, 40px);
+    }
   }
 
   &-w30 {
     background-color: $cl-white-semi;
+  }
+
+  &-b30 {
+    background-color: $cl-black-faint;
+  }
+
+  &-orange {
+    background-color: $cl-orange;
+    color: $cl-white;
   }
 
   &:hover {
