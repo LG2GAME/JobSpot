@@ -1,9 +1,12 @@
-.header-container {
-  text-align: center;
+.page-title {
+  color: $cl-white;
+  font-size: clamp(36px, 4vw, 48px);
+  text-transform: uppercase;
+  font-weight: $fw-bold;
 }
 
 .hero-text {
-  color: #fff;
+  color: $cl-white;
   font-size: clamp(36px, 4vw, 48px);
   font-weight: $fw-bold;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
@@ -46,6 +49,10 @@
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: $fw-s-bold;
   text-transform: capitalize;
+
+  &--white {
+    color: $cl-white;
+  }
 }
 
 .card-side-text {
