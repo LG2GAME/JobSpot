@@ -14,57 +14,8 @@
   }
 }
 
-.job-card {
-  &__header {
-    @include setDisplay(flex, center, start, row);
-    gap: 30px;
-    width: 100%;
-
-    img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-  }
-
-  &__title-box {
-    width: 100%;
-  }
-
-  &__info {
-    @include setDisplay(flex, center, space-between, row);
-  }
-
-  &__footer {
-    @include setDisplay(flex, center, space-between, row);
-    width: 100%;
-
-    span {
-      @include setDisplay();
-      gap: 15px;
-    }
-  }
-
-  &__footer-info {
-    @include setDisplay();
-    gap: 10px;
-
-    img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-    }
-  }
-}
-
 @media (width <= 992px) {
   .job-slider .card {
     min-width: 320px;
-  }
-
-  .job-card {
-    &__footer span {
-      flex-direction: column;
-    }
   }
 }
