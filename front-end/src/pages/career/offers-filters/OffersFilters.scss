@@ -1,0 +1,48 @@
+@import "@styles/variables";
+@import "@styles/mixins";
+
+.career-filters {
+  background-color: $cl-turquoise;
+  width: 50%;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+
+  &--collapsed {
+    width: 100%;
+
+    .dropdown-group {
+      display: none;
+    }
+  }
+}
+
+.career-offers {
+  @include setDisplay(flex, center, center, column);
+  gap: 30px;
+  width: 50%;
+
+  .card {
+    width: 100%;
+  }
+
+  .btn {
+    cursor: pointer;
+  }
+
+  &--collapsed {
+    width: 100%;
+  }
+}
+
+@media (width <= 992px) {
+  .career-filters,
+  .career-offers {
+    width: 100%;
+  }
+
+  .offer-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
