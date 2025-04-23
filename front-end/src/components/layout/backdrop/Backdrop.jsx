@@ -9,3 +9,12 @@ export default function Backdrop() {
     ></div>
   );
 }
+
+export function SmallBackdrop() {
+  return (
+    <div
+      className="backdrop backdrop--small"
+      style={{ backgroundImage: `url(${backdropImage})` }}
+    ></div>
+  );
+}

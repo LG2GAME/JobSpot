@@ -1,18 +1,15 @@
 .backdrop {
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: auto;
   height: 100vh;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
   overflow: hidden !important;
 
-  @media (width <= 768px) {
-    background-size: 200%;
-  }
-  @media (width <= 576px) {
-    background-size: cover;
+  &--small {
+    height: 50vh;
   }
 }
