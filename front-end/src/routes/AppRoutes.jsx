@@ -1,9 +1,12 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Backdrop from "../components/layout/backdrop/Backdrop";
+import Backdrop, {
+  SmallBackdrop,
+} from "../components/layout/backdrop/Backdrop";
 
 const Home = lazy(() => import("@pages/home/Home"));
+const Career = lazy(() => import("@pages/career/Career"));
 
 const AppRoutes = () => {
   return (
@@ -15,6 +18,14 @@ const AppRoutes = () => {
             <BackdropWrapper>
               <Home />
             </BackdropWrapper>
+          }
+        />
+        <Route
+          path="/career"
+          element={
+            <SmallBackdropWrapper>
+              <Career />
+            </SmallBackdropWrapper>
           }
         />
       </Routes>
@@ -29,6 +40,13 @@ const ContainerWrapper = ({ children }) => (
 const BackdropWrapper = ({ children }) => (
   <>
     <Backdrop />
+    <ContainerWrapper>{children}</ContainerWrapper>
+  </>
+);
+
+const SmallBackdropWrapper = ({ children }) => (
+  <>
+    <SmallBackdrop />
     <ContainerWrapper>{children}</ContainerWrapper>
   </>
 );
