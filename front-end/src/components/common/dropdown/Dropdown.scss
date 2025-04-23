@@ -1,0 +1,49 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &-header {
+    @include setDisplay(flex, center, space-between, row);
+    cursor: pointer;
+
+    img {
+      @include setTransition();
+      width: 25px;
+      user-select: none;
+    }
+
+    &--collapsed img {
+      rotate: 180deg;
+    }
+  }
+
+  &-options {
+    ul {
+      @include setDisplay(flex, start, center, column);
+      list-style-type: none;
+      gap: 10px;
+    }
+  }
+
+  &-option {
+    @include setDisplay(flex, center, start, row);
+    gap: 15px;
+    cursor: pointer;
+
+    input {
+      appearance: none;
+      width: 20px;
+      aspect-ratio: 1 / 1;
+      border: 3px solid $cl-white;
+      border-radius: 6px;
+
+      &:checked {
+        background-color: $cl-white;
+      }
+    }
+  }
+}
