@@ -5,7 +5,7 @@ import { HeaderContainer } from "@components/common/headers/HeaderContainer";
 import { GalleryFilters } from "@components/common/gallery-filters/GalleryFilters";
 import { GallerySlider } from "@components/common/gallery/GallerySlider";
 
-import { mockGallery } from "@assets/data/mockGallery";
+import offers from "@assets/data/offers";
 
 import "./Gallery.scss";
 import leftArrowIcon from "@assets/images/left-arrow.png";
@@ -52,7 +52,7 @@ export const Gallery = () => {
             </a>
           </div>
         </div>
-        <GallerySlider data={mockGallery} scrollRef={sliderRef} />
+        <GallerySlider data={offers} scrollRef={sliderRef} length={10} />
       </div>
       <Link to="/career" className="btn btn-orange">
         Zobacz więcej

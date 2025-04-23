@@ -32,6 +32,7 @@
     &-buttons {
       @include setDisplay();
       gap: 30px;
+      user-select: none;
 
       a {
         @include setDisplay();
@@ -68,5 +69,11 @@
 @media (width <= 992px) {
   .gallery__controls-filters {
     flex-wrap: wrap;
+  }
+}
+
+@media (width <= 768px) {
+  .gallery__controls-buttons {
+    display: none;
   }
 }
