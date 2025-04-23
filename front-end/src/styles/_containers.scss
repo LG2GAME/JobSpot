@@ -1,0 +1,18 @@
+@import "mixins";
+
+.header-container {
+  text-align: center;
+}
+
+.title-container {
+  height: 50vh;
+}
+
+.offer-container {
+  @include setDisplay(flex, start, space-between, row);
+  gap: 60px;
+
+  &--column {
+    flex-direction: column;
+  }
+}
