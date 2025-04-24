@@ -2,14 +2,32 @@
 @import "@styles/mixins";
 
 .career-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   background-color: $cl-turquoise;
   width: 50%;
   border-radius: 20px;
   padding: 15px;
   cursor: pointer;
 
+  &__header {
+    @include setDisplay(flex, center, space-between, row);
+
+    img {
+      @include setTransition();
+      width: 35px;
+      user-select: none;
+    }
+  }
+
   &--collapsed {
     width: 100%;
+    gap: 0;
+
+    .career-filters__header img {
+      rotate: 180deg;
+    }
 
     .dropdown-group {
       display: none;
