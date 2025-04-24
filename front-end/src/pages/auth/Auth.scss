@@ -1,0 +1,6 @@
+@import "@styles/mixins";
+
+.auth {
+  @include minHeight(75vh);
+  @include setDisplay();
+}
