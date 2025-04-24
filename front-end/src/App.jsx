@@ -1,14 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "@routes/AppRoutes";
+import AppRoutes from "./routes/AppRoutes";
 
-import { Navigation } from "@components/layout/navigation/Navigation";
+import { Navigation } from "./components/layout/navigation/Navigation";
+import { Footer } from "./components/layout/footer/Footer";
+import { ResetScroll } from "./components/layout/helpers/ResetScroll";
 
 import "@styles/main.scss";
-import { Footer } from "./components/layout/footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
+      <ResetScroll />
       <Navigation />
       <AppRoutes />
       <Footer />
