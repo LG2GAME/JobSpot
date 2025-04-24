@@ -15,7 +15,7 @@ export const Hero = () => (
         idealną posadę w mgnieniu oka!
       </p>
       <div className="hero__content-buttons">
-        <Link to="/" className="btn btn-white">
+        <Link to="/register" className="btn btn-white">
           Dołącz za darmo!
         </Link>
         <Link to="/career" className="btn btn-w30 button-text">

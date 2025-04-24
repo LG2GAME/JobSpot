@@ -40,10 +40,13 @@ export const Navigation = () => {
           </li>
         </ul>
         <ul>
-          <Link to="/" className="btn btn-white button-text button-text--navy">
+          <Link
+            to="/login"
+            className="btn btn-white button-text button-text--navy"
+          >
             Login
           </Link>
-          <Link to="/" className="btn btn-w30">
+          <Link to="/register" className="btn btn-w30">
             Rejestracja
           </Link>
         </ul>
