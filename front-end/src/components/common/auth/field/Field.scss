@@ -1,0 +1,55 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.form {
+  &-label {
+    @include setDisplay(flex, start, start, column);
+    width: 100%;
+    color: $cl-slate;
+    position: relative;
+
+    span {
+      @include setTransition();
+      position: absolute;
+      bottom: 5px;
+      left: 15px;
+    }
+
+    input {
+      border: 0;
+      border-bottom: 2px solid $cl-slate;
+      color: $cl-slate;
+      outline: none;
+      padding: 15px 15px 5px 15px;
+      width: 100%;
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-color: $cl-orange;
+      }
+
+      &:focus + span,
+      &:not(:placeholder-shown) + span {
+        transform: translateY(-20px);
+      }
+    }
+  }
+
+  &-checkbox {
+    @include setDisplay();
+    gap: 5px;
+    cursor: pointer;
+
+    input {
+      appearance: none;
+      width: 20px;
+      aspect-ratio: 1 / 1;
+      border: 2px solid $cl-orange;
+      border-radius: 4px;
+
+      &:checked {
+        background-color: $cl-orange;
+      }
+    }
+  }
+}
