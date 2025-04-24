@@ -1,7 +1,9 @@
 import { useState } from "react";
+
+import { handleCheckboxChangeFactory } from "@utils/dropdownUtils";
+
 import "./Dropdown.scss";
 import arrowIcon from "@assets/images/up-arrow.png";
-import { handleCheckboxChangeFactory } from "@utils/dropdownUtils";
 
 export const Dropdown = ({ data }) => {
   const [collapsed, setCollapsed] = useState(data.map(() => false));
