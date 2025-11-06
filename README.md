@@ -69,7 +69,30 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 src
    ├── App.tsx
    ├── assets
+   │   ├── icons
+   │   │   └── index.ts
+   │   └── images
+   │       ├── ellipse.png
+   │       └── index.ts
    ├── components
+   │   ├── common
+   │   │   ├── button
+   │   │   │   ├── Button.tsx
+   │   │   │   └── button.css.ts
+   │   │   └── index.ts
+   │   └── layout
+   │       ├── Layout.tsx
+   │       ├── backdrop
+   │       │   ├── Backdrop.tsx
+   │       │   └── backdrop.css.ts
+   │       ├── index.ts
+   │       └── navigation
+   │           ├── MenuToggle.tsx
+   │           ├── Navigation.tsx
+   │           └── navigation.css.ts
+   ├── hooks
+   │   ├── useMediaQuery.ts
+   │   └── useMobileNavigation.ts
    ├── main.tsx
    ├── pages
    ├── routes
@@ -104,4 +127,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*4 listopada 2025*
+*6 listopada 2025*
