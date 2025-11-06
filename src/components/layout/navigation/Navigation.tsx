@@ -28,16 +28,16 @@ const Navigation = () => {
           <Link to="/">Home</Link>
         </li>
         <li className={style.menuItem} onClick={handleMenu}>
-          <Link to="/">Career</Link>
+          <Link to="/">Kariera</Link>
         </li>
         <li className={style.menuItem} onClick={handleMenu}>
           <Link to="/">Blog</Link>
         </li>
         <li className={style.menuItem} onClick={handleMenu}>
-          <Link to="/">About us</Link>
+          <Link to="/">O nas</Link>
         </li>
         <li className={style.menuItem} onClick={handleMenu}>
-          <Button to="/">Account</Button>
+          <Button to="/">Konto</Button>
         </li>
       </ul>
     </nav>
