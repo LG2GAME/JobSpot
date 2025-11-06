@@ -10,10 +10,10 @@ globalStyle("*, *::before, *::after", {
 });
 
 globalStyle("body", {
-  backgroundColor: vars.colors.snow,
-  color: vars.colors.gray,
+  backgroundColor: vars.color.snow,
+  color: vars.color.gray,
   fontFamily: "Poppins, sans-serif",
-  fontWeight: vars.fontWeights.medium,
+  fontWeight: vars.fontWeight.medium,
 });
 
 globalStyle("ul", {
@@ -23,4 +23,18 @@ globalStyle("ul", {
 globalStyle("a", {
   color: "inherit",
   textDecoration: "none",
+});
+
+globalStyle("a, button, .clickable", {
+  display: "inline-block",
+  transition: "transform 0.2s ease, opacity 0.2s ease",
+  cursor: "pointer",
+});
+
+globalStyle("a:hover, button:hover, .clickable:hover", {
+  transform: "scale(1.03)",
+});
+
+globalStyle("a:active, button:active, .clickable:active", {
+  transform: "scale(0.97)",
 });

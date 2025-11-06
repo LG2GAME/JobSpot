@@ -8,13 +8,15 @@ export const mq = {
 };
 
 export const vars = createGlobalTheme(":root", {
-  colors: {
+  color: {
     black: "#000",
     white: "#fff",
     snow: "#f5fefd",
     gray: "#455A64",
+    orange: "#F48C06",
+    turquoise: "#49BBBD",
   },
-  fontSizes: {
+  fontSize: {
     xxs: "clamp(8px, 1.2vw, 14px)",
     xs: "clamp(12px, 1.8vw, 16px)",
     sm: "clamp(14px, 2.2vw, 20px)",
@@ -23,7 +25,7 @@ export const vars = createGlobalTheme(":root", {
     xl: "clamp(28px, 4vw, 36px)",
     xxl: "clamp(36px, 6vw, 64px)",
   },
-  fontWeights: {
+  fontWeight: {
     black: "900",
     bold: "700",
     medium: "500",
@@ -38,6 +40,7 @@ export const vars = createGlobalTheme(":root", {
   },
   spacing: {
     gap: {
+      xxxs: "clamp(5px, 0.75vw, 6px)",
       xxs: "clamp(8px, 1vw, 10px)",
       xs: "clamp(12px, 1.5vw, 15px)",
       sm: "clamp(16px, 2vw, 20px)",
@@ -45,6 +48,21 @@ export const vars = createGlobalTheme(":root", {
       lg: "clamp(48px, 5vw, 60px)",
       xl: "clamp(96px, 10vw, 120px)",
     },
-    padding: {},
+    padding: {
+      xxs: "clamp(8px, 1vw, 10px)",
+      xs: "clamp(12px, 1.5vw, 15px)",
+      sm: "clamp(16px, 2vw, 20px)",
+      md: "clamp(24px, 3vw, 30px)",
+      lg: "clamp(48px, 5vw, 60px)",
+      xl: "clamp(96px, 10vw, 120px)",
+    },
+    margin: {
+      xxs: "clamp(8px, 1vw, 10px)",
+      xs: "clamp(12px, 1.5vw, 15px)",
+      sm: "clamp(16px, 2vw, 20px)",
+      md: "clamp(24px, 3vw, 30px)",
+      lg: "clamp(48px, 5vw, 60px)",
+      xl: "clamp(96px, 10vw, 120px)",
+    },
   },
 });
