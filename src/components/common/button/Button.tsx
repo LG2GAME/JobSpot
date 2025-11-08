@@ -5,16 +5,24 @@ import * as style from "./button.css";
 interface ButtonProps {
   children: ReactNode;
   to?: LinkProps["to"];
+  ariaLabel?: string;
   theme?: "default" | "ghost";
 }
 
-const Button = ({ children, to, theme = "default" }: ButtonProps) => {
+const Button = ({
+  children,
+  to,
+  ariaLabel,
+  theme = "default",
+}: ButtonProps) => {
   return to ? (
-    <Link to={to} className={style.button({ theme })}>
+    <Link to={to} aria-label={ariaLabel} className={style.button({ theme })}>
       {children}
     </Link>
   ) : (
-    <button className={style.button({ theme })}>{children}</button>
+    <button aria-label={ariaLabel} className={style.button({ theme })}>
+      {children}
+    </button>
   );
 };
 
