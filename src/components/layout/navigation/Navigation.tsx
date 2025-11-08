@@ -3,12 +3,14 @@ import * as style from "./navigation.css";
 import { Button } from "@components/common";
 import MenuToggle from "./MenuToggle";
 import { useMobileNavigation } from "@hooks/useMobileNavigation";
+import { useNavigationHeight } from "@hooks/useNavbarHeight";
 
 const Navigation = () => {
+  const navRef = useNavigationHeight();
   const { isOpen, isMobile, toggleMenu, handleMenu } = useMobileNavigation();
 
   return (
-    <nav className={style.navigation} aria-label="Navigation">
+    <nav ref={navRef} className={style.navigation} aria-label="Navigation">
       <Link to="/" className={style.logo}>
         JobSpot
       </Link>
