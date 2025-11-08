@@ -8,13 +8,14 @@ export const navigation = style({
   justifyContent: "space-between",
   padding: `${vars.spacing.padding.sm}  ${vars.spacing.padding.md}`,
   textTransform: "capitalize",
+  zIndex: 1,
 });
 
 export const logo = style({
   fontSize: vars.fontSize.xl,
   fontWeight: vars.fontWeight.bold,
   color: vars.color.white,
-  zIndex: 1,
+  zIndex: 2,
 });
 
 export const menuToggle = style({
@@ -24,6 +25,7 @@ export const menuToggle = style({
   gap: vars.spacing.gap.xxxs,
   zIndex: 2,
   cursor: "pointer",
+
   "@media": { [mq.lg]: { display: "flex" } },
 });
 export const menuToggleLine = style({
@@ -38,6 +40,8 @@ export const menu = recipe({
     alignItems: "center",
     justifyContent: "space-between",
     gap: vars.spacing.gap.lg,
+    zIndex: 1,
+
     "@media": {
       [mq.lg]: {
         width: "100%",
@@ -69,6 +73,7 @@ export const menuItem = style({
   color: vars.color.white,
   fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.medium,
+
   "@media": {
     [mq.lg]: {
       fontSize: vars.fontSize.md,
