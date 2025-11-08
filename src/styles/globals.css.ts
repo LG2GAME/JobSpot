@@ -9,11 +9,17 @@ globalStyle("*, *::before, *::after", {
   WebkitFontSmoothing: "antialiased",
 });
 
+globalStyle("main", {
+  padding: `${vars.spacing.padding.sm} ${vars.spacing.padding.lg}`,
+  minHeight: "100vh",
+});
+
 globalStyle("body", {
   backgroundColor: vars.color.snow,
   color: vars.color.gray,
   fontFamily: "Poppins, sans-serif",
   fontWeight: vars.fontWeight.medium,
+  minHeight: "100vh",
 });
 
 globalStyle("ul", {
