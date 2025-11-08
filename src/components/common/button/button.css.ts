@@ -5,6 +5,10 @@ export const button = recipe({
   base: {
     padding: `${vars.spacing.padding.xs} ${vars.spacing.padding.md}`,
     borderRadius: vars.radius.xxl,
+    outline: "none",
+    border: 0,
+    fontSize: vars.fontSize.sm,
+    display: "inline-block",
   },
   variants: {
     theme: {
@@ -12,7 +16,10 @@ export const button = recipe({
         backgroundColor: vars.color.white,
         color: vars.color.turquoise,
       },
-      ghost: {},
+      ghost: {
+        backgroundColor: vars.color.whiteGhost,
+        color: vars.color.white,
+      },
     },
   },
 });
