@@ -1,5 +1,5 @@
-// import account from "./account.png";
+import search from "./search.svg";
 
-// export const icon = {
-//   account,
-// };
+export const icon = {
+  search,
+};
