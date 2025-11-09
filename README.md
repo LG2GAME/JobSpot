@@ -70,16 +70,43 @@ src
    ├── App.tsx
    ├── assets
    │   ├── icons
-   │   │   └── index.ts
-   │   └── images
-   │       ├── ellipse.png
-   │       └── index.ts
+   │   │   ├── index.ts
+   │   │   └── search.svg
+   │   ├── images
+   │   │   ├── cat-electrician.png
+   │   │   ├── cat-engineering.png
+   │   │   ├── cat-finance.png
+   │   │   ├── cat-marketing.png
+   │   │   ├── cat-media.png
+   │   │   ├── cat-product.png
+   │   │   ├── cat-projects.png
+   │   │   ├── cat-services.png
+   │   │   ├── ellipse.png
+   │   │   ├── es-account.png
+   │   │   ├── es-apply.png
+   │   │   ├── es-cv.png
+   │   │   ├── index.ts
+   │   │   └── learning-pana.png
+   │   └── mockDatas
+   │       └── mockCategories.ts
    ├── components
    │   ├── common
    │   │   ├── button
    │   │   │   ├── Button.tsx
    │   │   │   └── button.css.ts
-   │   │   └── index.ts
+   │   │   ├── card
+   │   │   │   ├── Card.tsx
+   │   │   │   └── card.css.ts
+   │   │   ├── cardWrapper
+   │   │   │   ├── CardWrapper.tsx
+   │   │   │   └── cardWrapper.css.ts
+   │   │   ├── headline
+   │   │   │   ├── Headline.tsx
+   │   │   │   └── headline.css.ts
+   │   │   ├── index.ts
+   │   │   └── section
+   │   │       ├── Section.tsx
+   │   │       └── section.css.ts
    │   └── layout
    │       ├── Layout.tsx
    │       ├── backdrop
@@ -91,10 +118,24 @@ src
    │           ├── Navigation.tsx
    │           └── navigation.css.ts
    ├── hooks
+   │   ├── useDeviceCategory.ts
    │   ├── useMediaQuery.ts
-   │   └── useMobileNavigation.ts
+   │   ├── useMobileNavigation.ts
+   │   └── useNavbarHeight.ts
    ├── main.tsx
    ├── pages
+   │   ├── home
+   │   │   ├── Home.tsx
+   │   │   ├── getStarted
+   │   │   │   ├── GetStarted.tsx
+   │   │   │   └── getStarted.css.ts
+   │   │   ├── hero
+   │   │   │   ├── Hero.tsx
+   │   │   │   └── hero.css.ts
+   │   │   └── jobCategories
+   │   │       ├── JobCategories.tsx
+   │   │       └── jobCategories.css.ts
+   │   └── index.ts
    ├── routes
    │   └── routes.tsx
    ├── styles
@@ -127,4 +168,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*6 listopada 2025*
+*9 listopada 2025*
