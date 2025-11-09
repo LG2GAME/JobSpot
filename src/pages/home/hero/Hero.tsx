@@ -8,7 +8,7 @@ const Hero = () => {
   const { isDesktop } = useDeviceCategory();
 
   return (
-    <Section>
+    <Section type="row">
       <div className={style.content}>
         <h1 id="hero-heading" className={style.header}>
           <span className={style.highlighted}>Znalezienie pracy,</span> nigdy{" "}

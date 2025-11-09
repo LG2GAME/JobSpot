@@ -5,7 +5,7 @@ export const content = style({
   display: "flex",
   flexDirection: "column",
   height: "100%",
-  justifyContent: "space-evenly",
+  justifyContent: "center",
   width: "50%",
   gap: vars.spacing.gap.lg,
 
@@ -25,6 +25,7 @@ export const content = style({
 export const header = style({
   color: vars.color.white,
   fontSize: vars.fontSize.xl,
+  fontWeight: vars.fontWeight.bold,
 });
 
 export const highlighted = style({
