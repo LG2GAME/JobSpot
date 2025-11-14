@@ -2,7 +2,7 @@ import { Card, Button } from "@components/common";
 import * as style from "./galleryCard.css";
 import { icon } from "@assets/icons";
 
-interface Offer {
+interface OfferProps {
   logo?: string;
   title?: string;
   company?: string;
@@ -14,7 +14,7 @@ interface Offer {
 }
 
 interface GalleryCardProps {
-  offer: Offer;
+  offer: OfferProps;
 }
 
 const formatFirstPart = (value: string) => {
