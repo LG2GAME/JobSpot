@@ -14,7 +14,7 @@ const GetStarted = () => {
 
   return (
     <Section type="column">
-      <Headline>
+      <Headline align="center">
         Tylko <Highlight>3 proste kroki</Highlight> {isDesktop && <br />} do
         nowych możliwości
       </Headline>

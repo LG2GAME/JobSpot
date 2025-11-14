@@ -33,6 +33,7 @@ export const highlighted = style({
 });
 
 export const paragraph = style({
+  fontSize: vars.fontSize.sm,
   width: "50%",
 
   "@media": {

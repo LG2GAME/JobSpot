@@ -11,7 +11,7 @@ import * as style from "./jobCategories.css";
 const JobCategories = () => {
   return (
     <Section type="column">
-      <Headline>
+      <Headline align="center">
         Popularne <Highlight>kategorie pracy</Highlight>
       </Headline>
       <CardWrapper columns="4">
@@ -35,7 +35,7 @@ const JobCategories = () => {
               </h3>
               <p
                 className={style.catParagraph({
-                  accent: isAccent ? "accent" : undefined,
+                  accent: id % 3 === 0 ? "accent" : undefined,
                 })}
               >
                 {offers} ofert
