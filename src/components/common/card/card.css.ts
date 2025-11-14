@@ -16,8 +16,19 @@ export const card = recipe({
   },
   variants: {
     type: {
-      default: { backgroundColor: "inherit" },
+      default: { backgroundColor: vars.color.white },
       accent: { backgroundColor: vars.color.orange },
+    },
+    dest: {
+      gallery: {
+        minWidth: "var(--card-width)",
+        width: "auto",
+        flexBasis: "var(--card-width)",
+        flexShrink: 0,
+        flexGrow: 0,
+        boxShadow: "none",
+        border: `3px solid ${vars.color.royalBlueGhost}`,
+      },
     },
   },
 });

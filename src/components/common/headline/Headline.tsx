@@ -3,10 +3,11 @@ import * as style from "./headline.css";
 
 interface HeadlineProps {
   children: ReactNode;
+  align?: "left" | "center";
 }
 
-const Headline = ({ children }: HeadlineProps) => {
-  return <h2 className={style.headline}>{children}</h2>;
+const Headline = ({ children, align = "left" }: HeadlineProps) => {
+  return <h2 className={style.headline({ align: align })}>{children}</h2>;
 };
 
 interface HighlightProps {

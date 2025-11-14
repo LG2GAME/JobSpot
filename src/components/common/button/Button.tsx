@@ -5,22 +5,61 @@ import * as style from "./button.css";
 interface ButtonProps {
   children: ReactNode;
   to?: LinkProps["to"];
+  href?: string;
   ariaLabel?: string;
-  theme?: "default" | "ghost";
+  theme?:
+    | "default"
+    | "ghost"
+    | "darkGhost"
+    | "accent"
+    | "border"
+    | "borderSm"
+    | "galleryOn"
+    | "galleryOff";
+  key?: string;
+  onClick?: () => void;
 }
 
 const Button = ({
   children,
   to,
+  href,
   ariaLabel,
   theme = "default",
+  key,
+  onClick,
 }: ButtonProps) => {
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={style.button({ theme })}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return to ? (
-    <Link to={to} aria-label={ariaLabel} className={style.button({ theme })}>
+    <Link
+      to={to}
+      aria-label={ariaLabel}
+      className={style.button({ theme })}
+      key={key}
+      onClick={onClick}
+    >
       {children}
     </Link>
   ) : (
-    <button aria-label={ariaLabel} className={style.button({ theme })}>
+    <button
+      aria-label={ariaLabel}
+      className={style.button({ theme })}
+      key={key}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
