@@ -71,8 +71,12 @@ src
    ├── assets
    │   ├── icons
    │   │   ├── index.ts
-   │   │   └── search.svg
+   │   │   ├── localisation.png
+   │   │   ├── search.svg
+   │   │   └── time-job.png
    │   ├── images
+   │   │   ├── arrow-off.png
+   │   │   ├── arrow-on.png
    │   │   ├── cat-electrician.png
    │   │   ├── cat-engineering.png
    │   │   ├── cat-finance.png
@@ -86,9 +90,11 @@ src
    │   │   ├── es-apply.png
    │   │   ├── es-cv.png
    │   │   ├── index.ts
-   │   │   └── learning-pana.png
+   │   │   ├── learning-pana.png
+   │   │   └── multiple-choice.png
    │   └── mockDatas
-   │       └── mockCategories.ts
+   │       ├── mockCategories.ts
+   │       └── mockOffers.json
    ├── components
    │   ├── common
    │   │   ├── button
@@ -107,6 +113,31 @@ src
    │   │   └── section
    │   │       ├── Section.tsx
    │   │       └── section.css.ts
+   │   ├── features
+   │   │   ├── gallery
+   │   │   │   ├── Gallery.tsx
+   │   │   │   ├── components
+   │   │   │   │   ├── galleryCard
+   │   │   │   │   │   ├── GalleryCard.tsx
+   │   │   │   │   │   └── galleryCard.css.ts
+   │   │   │   │   ├── galleryControls
+   │   │   │   │   │   ├── GalleryControls.tsx
+   │   │   │   │   │   └── galleryControls.css.ts
+   │   │   │   │   ├── galleryFilters
+   │   │   │   │   │   ├── GalleryFilters.tsx
+   │   │   │   │   │   └── galleryFilters.css.ts
+   │   │   │   │   ├── galleryTrack
+   │   │   │   │   │   ├── GalleryTrack.tsx
+   │   │   │   │   │   └── galleryTrack.css.ts
+   │   │   │   │   └── index.ts
+   │   │   │   ├── gallery.css.ts
+   │   │   │   ├── hooks
+   │   │   │   │   ├── useCardWidth.ts
+   │   │   │   │   └── useGalleryScroll.ts
+   │   │   │   ├── index.ts
+   │   │   │   └── utils
+   │   │   │       └── getComputedStyle.ts
+   │   │   └── index.ts
    │   └── layout
    │       ├── Layout.tsx
    │       ├── backdrop
@@ -132,9 +163,14 @@ src
    │   │   ├── hero
    │   │   │   ├── Hero.tsx
    │   │   │   └── hero.css.ts
-   │   │   └── jobCategories
-   │   │       ├── JobCategories.tsx
-   │   │       └── jobCategories.css.ts
+   │   │   ├── jobCategories
+   │   │   │   ├── JobCategories.tsx
+   │   │   │   └── jobCategories.css.ts
+   │   │   ├── jobGalleries
+   │   │   │   └── JobGalleries.tsx
+   │   │   └── jobInfo
+   │   │       ├── JobInfo.tsx
+   │   │       └── jobInfo.css.ts
    │   └── index.ts
    ├── routes
    │   └── routes.tsx
@@ -168,4 +204,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*9 listopada 2025*
+*14 listopada 2025*
