@@ -75,6 +75,7 @@ src
    │   │   ├── search.svg
    │   │   └── time-job.png
    │   ├── images
+   │   │   ├── apostrophe.png
    │   │   ├── arrow-off.png
    │   │   ├── arrow-on.png
    │   │   ├── cat-electrician.png
@@ -94,7 +95,8 @@ src
    │   │   └── multiple-choice.png
    │   └── mockDatas
    │       ├── mockCategories.ts
-   │       └── mockOffers.json
+   │       ├── mockOffers.json
+   │       └── mockOpinions.json
    ├── components
    │   ├── common
    │   │   ├── button
@@ -110,9 +112,12 @@ src
    │   │   │   ├── Headline.tsx
    │   │   │   └── headline.css.ts
    │   │   ├── index.ts
-   │   │   └── section
-   │   │       ├── Section.tsx
-   │   │       └── section.css.ts
+   │   │   ├── section
+   │   │   │   ├── Section.tsx
+   │   │   │   └── section.css.ts
+   │   │   └── track
+   │   │       ├── Track.tsx
+   │   │       └── track.css.ts
    │   ├── features
    │   │   ├── gallery
    │   │   │   ├── Gallery.tsx
@@ -126,18 +131,25 @@ src
    │   │   │   │   ├── galleryFilters
    │   │   │   │   │   ├── GalleryFilters.tsx
    │   │   │   │   │   └── galleryFilters.css.ts
-   │   │   │   │   ├── galleryTrack
-   │   │   │   │   │   ├── GalleryTrack.tsx
-   │   │   │   │   │   └── galleryTrack.css.ts
    │   │   │   │   └── index.ts
    │   │   │   ├── gallery.css.ts
-   │   │   │   ├── hooks
-   │   │   │   │   ├── useCardWidth.ts
-   │   │   │   │   └── useGalleryScroll.ts
    │   │   │   ├── index.ts
    │   │   │   └── utils
-   │   │   │       └── getComputedStyle.ts
-   │   │   └── index.ts
+   │   │   ├── index.ts
+   │   │   └── opinionsSlider
+   │   │       ├── OpinionsSlider.tsx
+   │   │       ├── components
+   │   │       │   ├── index.ts
+   │   │       │   ├── opinionCard
+   │   │       │   │   ├── OpinionCard.tsx
+   │   │       │   │   └── opinionCard.css.ts
+   │   │       │   └── sliderProgress
+   │   │       │       ├── SliderProgress.tsx
+   │   │       │       └── sliderProgress.css.ts
+   │   │       ├── hooks
+   │   │       │   └── useAutoScroll.ts
+   │   │       ├── index.ts
+   │   │       └── opinionSlider.css.ts
    │   └── layout
    │       ├── Layout.tsx
    │       ├── backdrop
@@ -149,7 +161,9 @@ src
    │           ├── Navigation.tsx
    │           └── navigation.css.ts
    ├── hooks
+   │   ├── useCardWidth.ts
    │   ├── useDeviceCategory.ts
+   │   ├── useGalleryScroll.ts
    │   ├── useMediaQuery.ts
    │   ├── useMobileNavigation.ts
    │   └── useNavbarHeight.ts
@@ -168,9 +182,11 @@ src
    │   │   │   └── jobCategories.css.ts
    │   │   ├── jobGalleries
    │   │   │   └── JobGalleries.tsx
-   │   │   └── jobInfo
-   │   │       ├── JobInfo.tsx
-   │   │       └── jobInfo.css.ts
+   │   │   ├── jobInfo
+   │   │   │   ├── JobInfo.tsx
+   │   │   │   └── jobInfo.css.ts
+   │   │   └── opinions
+   │   │       └── Opinions.tsx
    │   └── index.ts
    ├── routes
    │   └── routes.tsx
@@ -178,6 +194,8 @@ src
    │   ├── globals.css.ts
    │   ├── index.ts
    │   └── theme.css.ts
+   ├── utils
+   │   └── getComputedStyle.ts
    └── vite-env.d.ts
 ```
 <!-- prettier-ignore-end -->
