@@ -1,0 +1,98 @@
+[
+  {
+    "image": "https://randomuser.me/api/portraits/men/75.jpg",
+    "name": "Michał Nowak",
+    "job": "Projektant graficzny",
+    "comment": "Dzięki tej platformie szybko znalazłem pracę, która idealnie pasowała do moich umiejętności. Aplikowanie jest naprawdę łatwe, a oferty są aktualne!"
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/71.jpg",
+    "name": "Anna Wiśniewska",
+    "job": "Projektant graficzny",
+    "comment": "To najlepsze narzędzie do szukania pracy, jakie znalazłem! Dzięki prostemu procesowi aplikacji i spersonalizowanym ofertom znalazłem wymarzoną posadę."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/66.jpg",
+    "name": "Tomasz Zieliński",
+    "job": "Frontend Developer",
+    "comment": "Jestem bardzo zadowolony z platformy! Pomogła mi znaleźć świetną ofertę pracy i przygotować profesjonalne CV, które zrobiło wrażenie na pracodawcy."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/68.jpg",
+    "name": "Anna Wiśniewska",
+    "job": "UX Designer",
+    "comment": "Bardzo intuicyjna platforma! Wszystkie oferty są aktualne i łatwo je filtrować według moich preferencji."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/45.jpg",
+    "name": "Tomasz Lewandowski",
+    "job": "Backend Developer",
+    "comment": "Dzięki tej stronie znalazłem pracę w mojej wymarzonej firmie. Wszystko działa płynnie i bezproblemowo."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/65.jpg",
+    "name": "Katarzyna Zielińska",
+    "job": "Project Manager",
+    "comment": "Platforma jest bardzo przyjazna dla użytkownika. Znalazłam idealną ofertę w kilka dni."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "name": "Paweł Kamiński",
+    "job": "Fullstack Developer",
+    "comment": "Świetne doświadczenie! Wszystko działa sprawnie, a oferty są aktualne i atrakcyjne."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/22.jpg",
+    "name": "Magdalena Kaczmarek",
+    "job": "Marketing Specialist",
+    "comment": "Łatwa w użyciu i bardzo funkcjonalna platforma. Znalazłam idealną pracę dla siebie."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/12.jpg",
+    "name": "Krzysztof Jankowski",
+    "job": "QA Engineer",
+    "comment": "Polecam każdemu, kto szuka pracy. Proste filtrowanie i szybkie aplikowanie na oferty."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/33.jpg",
+    "name": "Joanna Pawłowska",
+    "job": "HR Specialist",
+    "comment": "Bardzo wygodna platforma, szybko znalazłam oferty odpowiadające moim wymaganiom."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/27.jpg",
+    "name": "Łukasz Wojciechowski",
+    "job": "DevOps Engineer",
+    "comment": "Platforma działa bardzo sprawnie. Wszystko jest przejrzyste i łatwe w obsłudze."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/47.jpg",
+    "name": "Ewa Szymańska",
+    "job": "Content Writer",
+    "comment": "Świetne doświadczenie użytkownika, znalazłam dokładnie to, czego szukałam."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/53.jpg",
+    "name": "Michał Dąbrowski",
+    "job": "Data Analyst",
+    "comment": "Szybko znalazłem ciekawe oferty, a proces aplikacji jest prosty i przejrzysty."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/18.jpg",
+    "name": "Agnieszka Wójcik",
+    "job": "Graphic Designer",
+    "comment": "Łatwość użycia i estetyka strony bardzo mnie pozytywnie zaskoczyły."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/men/40.jpg",
+    "name": "Paweł Krawczyk",
+    "job": "Software Engineer",
+    "comment": "Bardzo dobra platforma, szybkie aktualizacje ofert i wygodne filtrowanie."
+  },
+  {
+    "image": "https://randomuser.me/api/portraits/women/50.jpg",
+    "name": "Justyna Malinowska",
+    "job": "UI Designer",
+    "comment": "Znalazłam idealną pracę dzięki filtrom i szybkiemu procesowi aplikacji."
+  }
+]

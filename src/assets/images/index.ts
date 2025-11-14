@@ -14,6 +14,7 @@ import projects from "./cat-projects.png";
 import services from "./cat-services.png";
 import arrowOn from "./arrow-on.png";
 import arrowOff from "./arrow-off.png";
+import apostrophe from "./apostrophe.png";
 
 export const image = {
   ellipse,
@@ -32,4 +33,5 @@ export const image = {
   services,
   arrowOn,
   arrowOff,
+  apostrophe,
 };
