@@ -15,6 +15,8 @@ import services from "./cat-services.png";
 import arrowOn from "./arrow-on.png";
 import arrowOff from "./arrow-off.png";
 import apostrophe from "./apostrophe.png";
+import notFound from "./not-found.png";
+import inProgress from "./in-progress.png";
 
 export const image = {
   ellipse,
@@ -34,4 +36,6 @@ export const image = {
   arrowOn,
   arrowOff,
   apostrophe,
+  notFound,
+  inProgress,
 };
