@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navigation, Backdrop } from "./index";
+import { Navigation, Backdrop, Footer } from "./index";
 
 const Layout = () => (
   <>
@@ -8,6 +8,7 @@ const Layout = () => (
     <main>
       <Outlet />
     </main>
+    <Footer />
   </>
 );
 
