@@ -70,10 +70,17 @@ src
    ├── App.tsx
    ├── assets
    │   ├── icons
+   │   │   ├── email.svg
+   │   │   ├── facebook.svg
+   │   │   ├── gps.svg
    │   │   ├── index.ts
+   │   │   ├── instagram.svg
+   │   │   ├── linkedin.svg
    │   │   ├── localisation.png
+   │   │   ├── phone.svg
    │   │   ├── search.svg
-   │   │   └── time-job.png
+   │   │   ├── time-job.png
+   │   │   └── youtube.svg
    │   ├── images
    │   │   ├── apostrophe.png
    │   │   ├── arrow-off.png
@@ -155,6 +162,9 @@ src
    │       ├── backdrop
    │       │   ├── Backdrop.tsx
    │       │   └── backdrop.css.ts
+   │       ├── footer
+   │       │   ├── Footer.tsx
+   │       │   └── footer.css.ts
    │       ├── index.ts
    │       └── navigation
    │           ├── MenuToggle.tsx
@@ -222,4 +232,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*14 listopada 2025*
+*15 listopada 2025*
