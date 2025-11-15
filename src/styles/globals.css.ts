@@ -9,10 +9,6 @@ globalStyle("*, *::before, *::after", {
   WebkitFontSmoothing: "antialiased",
 });
 
-globalStyle("main", {
-  minHeight: "100vh",
-});
-
 globalStyle("body", {
   backgroundColor: vars.color.snow,
   color: vars.color.onyx,
