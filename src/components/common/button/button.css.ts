@@ -1,4 +1,4 @@
-import { vars } from "@styles/theme.css";
+import { mq, vars } from "@styles/theme.css";
 import { recipe } from "@vanilla-extract/recipes";
 
 export const button = recipe({
@@ -45,6 +45,12 @@ export const button = recipe({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: vars.color.orange,
+        "@media": {
+          [mq.md]: {
+            width: 45,
+            height: 45,
+          },
+        },
       },
       galleryOff: {
         padding: 0,
@@ -56,6 +62,12 @@ export const button = recipe({
         backgroundColor: vars.color.white,
         cursor: "not-allowed",
         pointerEvents: "none",
+        "@media": {
+          [mq.md]: {
+            width: 45,
+            height: 45,
+          },
+        },
       },
     },
   },

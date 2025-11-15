@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { vars } from "@styles/theme.css";
+import { mq, vars } from "@styles/theme.css";
 
 export const header = style({
   display: "flex",
@@ -70,9 +70,20 @@ export const footerInfo = style({
   alignItems: "center",
   justifyContent: "center",
   gap: vars.spacing.gap.xxs,
+  "@media": {
+    [mq.md]: {
+      fontSize: vars.fontSize.xs,
+    },
+  },
 });
 
 export const jobIcon = style({
   width: 20,
   height: 20,
+  "@media": {
+    [mq.md]: {
+      width: 15,
+      height: 15,
+    },
+  },
 });
