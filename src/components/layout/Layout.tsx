@@ -12,4 +12,14 @@ const Layout = () => (
   </>
 );
 
+export const ErrorLayout = () => (
+  <>
+    <Navigation />
+    <Backdrop />
+    <main>
+      <Outlet />
+    </main>
+  </>
+);
+
 export default Layout;
