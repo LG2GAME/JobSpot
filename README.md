@@ -97,9 +97,11 @@ src
    │   │   ├── es-account.png
    │   │   ├── es-apply.png
    │   │   ├── es-cv.png
+   │   │   ├── in-progress.png
    │   │   ├── index.ts
    │   │   ├── learning-pana.png
-   │   │   └── multiple-choice.png
+   │   │   ├── multiple-choice.png
+   │   │   └── not-found.png
    │   └── mockDatas
    │       ├── mockCategories.ts
    │       ├── mockOffers.json
@@ -197,7 +199,13 @@ src
    │   │   │   └── jobInfo.css.ts
    │   │   └── opinions
    │   │       └── Opinions.tsx
-   │   └── index.ts
+   │   ├── index.ts
+   │   ├── notFound
+   │   │   ├── NotFound.tsx
+   │   │   └── notFound.css.ts
+   │   └── underConstruction
+   │       ├── UnderConstruction.tsx
+   │       └── underConstruction.css.ts
    ├── routes
    │   └── routes.tsx
    ├── styles
