@@ -47,13 +47,13 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Kariera</Link>
+              <Link to="/career">Kariera</Link>
             </li>
             <li>
-              <Link to="/">Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/">O nas</Link>
+              <Link to="/about-us">O nas</Link>
             </li>
           </ul>
         </nav>
@@ -61,13 +61,13 @@ const Footer = () => {
           <h5 className={style.header}>Pomoc</h5>
           <ul className={style.list}>
             <li>
-              <Link to="/">Regulamin</Link>
+              <Link to="/terms">Regulamin</Link>
             </li>
             <li>
-              <Link to="/">Polityka prywatności</Link>
+              <Link to="/privacy-policy">Polityka prywatności</Link>
             </li>
             <li>
-              <Link to="/">Pliki cookies</Link>
+              <Link to="/cookies">Pliki cookies</Link>
             </li>
           </ul>
         </nav>
