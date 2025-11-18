@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navigation, Backdrop, Footer } from "./index";
+import { Navigation, Backdrop, Footer, AuthNavigation } from "./index";
 
 const Layout = () => (
   <>
@@ -13,6 +13,25 @@ const Layout = () => (
 );
 
 export const ErrorLayout = () => (
+  <>
+    <Navigation />
+    <Backdrop />
+    <main>
+      <Outlet />
+    </main>
+  </>
+);
+
+export const AuthLayout = () => (
+  <>
+    <AuthNavigation />
+    <main>
+      <Outlet />
+    </main>
+  </>
+);
+
+export const AccountLayout = () => (
   <>
     <Navigation />
     <Backdrop />
