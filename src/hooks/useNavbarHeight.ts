@@ -8,7 +8,10 @@ export const useNavigationHeight = () => {
 
     const updateHeight = () => {
       const height = navRef.current?.offsetHeight || 0;
-      document.documentElement.style.setProperty("--nav-height", `${height}px`);
+      document.documentElement.style.setProperty(
+        "--nav-height",
+        `${height + 1}px`
+      );
     };
 
     const observer = new ResizeObserver(updateHeight);
