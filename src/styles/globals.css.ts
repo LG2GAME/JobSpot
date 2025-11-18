@@ -26,16 +26,16 @@ globalStyle("a", {
   textDecoration: "none",
 });
 
-globalStyle("a, button, .clickable", {
+globalStyle("a, button", {
   display: "inline-block",
   transition: "transform 0.2s ease, opacity 0.2s ease",
   cursor: "pointer",
 });
 
-globalStyle("a:hover, button:hover, .clickable:hover", {
+globalStyle("a:hover, button:hover", {
   transform: "scale(1.03)",
 });
 
-globalStyle("a:active, button:active, .clickable:active", {
+globalStyle("a:active, button:active", {
   transform: "scale(0.97)",
 });
