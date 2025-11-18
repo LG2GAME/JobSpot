@@ -85,6 +85,7 @@ src
    │   │   ├── apostrophe.png
    │   │   ├── arrow-off.png
    │   │   ├── arrow-on.png
+   │   │   ├── auth-backdrop.png
    │   │   ├── cat-electrician.png
    │   │   ├── cat-engineering.png
    │   │   ├── cat-finance.png
@@ -128,6 +129,19 @@ src
    │   │       ├── Track.tsx
    │   │       └── track.css.ts
    │   ├── features
+   │   │   ├── account
+   │   │   │   ├── authWrapper
+   │   │   │   │   ├── AuthWrapper.tsx
+   │   │   │   │   └── authWrapper.css.ts
+   │   │   │   ├── components
+   │   │   │   │   ├── checkbox
+   │   │   │   │   │   ├── Checkbox.tsx
+   │   │   │   │   │   └── checkbox.css.ts
+   │   │   │   │   ├── index.ts
+   │   │   │   │   └── input
+   │   │   │   │       ├── Input.tsx
+   │   │   │   │       └── input.css.ts
+   │   │   │   └── index.ts
    │   │   ├── gallery
    │   │   │   ├── Gallery.tsx
    │   │   │   ├── components
@@ -161,6 +175,9 @@ src
    │   │       └── opinionSlider.css.ts
    │   └── layout
    │       ├── Layout.tsx
+   │       ├── authNavigation
+   │       │   ├── AuthNavigation.tsx
+   │       │   └── authNavigation.css.ts
    │       ├── backdrop
    │       │   ├── Backdrop.tsx
    │       │   └── backdrop.css.ts
@@ -173,6 +190,7 @@ src
    │           ├── Navigation.tsx
    │           └── navigation.css.ts
    ├── hooks
+   │   ├── useAuthStatus.ts
    │   ├── useCardWidth.ts
    │   ├── useDeviceCategory.ts
    │   ├── useGalleryScroll.ts
@@ -181,6 +199,15 @@ src
    │   └── useNavbarHeight.ts
    ├── main.tsx
    ├── pages
+   │   ├── account
+   │   │   ├── Account.tsx
+   │   │   ├── index.ts
+   │   │   ├── login
+   │   │   │   ├── Login.tsx
+   │   │   │   └── login.css.ts
+   │   │   └── register
+   │   │       ├── Register.tsx
+   │   │       └── register.css.ts
    │   ├── home
    │   │   ├── Home.tsx
    │   │   ├── getStarted
@@ -240,4 +267,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*15 listopada 2025*
+*18 listopada 2025*
