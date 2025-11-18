@@ -17,6 +17,7 @@ import arrowOff from "./arrow-off.png";
 import apostrophe from "./apostrophe.png";
 import notFound from "./not-found.png";
 import inProgress from "./in-progress.png";
+import authBackdrop from "./auth-backdrop.png";
 
 export const image = {
   ellipse,
@@ -38,4 +39,5 @@ export const image = {
   apostrophe,
   notFound,
   inProgress,
+  authBackdrop,
 };
