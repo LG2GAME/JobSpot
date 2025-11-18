@@ -10,7 +10,7 @@ const Navigation = () => {
   const { isOpen, isMobile, toggleMenu, handleMenu } = useMobileNavigation();
 
   return (
-    <nav ref={navRef} className={style.navigation} aria-label="Navigation">
+    <nav ref={navRef} className={style.navigation} aria-label="Nawigacja">
       <Link to="/" className={style.logo}>
         JobSpot
       </Link>
