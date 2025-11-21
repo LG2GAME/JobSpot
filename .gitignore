@@ -1,24 +1,45 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# GLOBAL IGNORE FOR MONOREPO
 
+# Dependencies
 node_modules
+**/node_modules
+
+# Build output
 dist
 dist-ssr
+build
+**/build
+.next
+**/.next
+out
+**/out
+
+# Temp
+.DS_Store
+*.log
+logs
+
+# Coverage
+coverage
+**/coverage
+
+# Env
+.env*
 *.local
 
-# Editor directories and files
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Editors
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel
+.vercel
