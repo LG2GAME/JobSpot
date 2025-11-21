@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@utils/*": ["./src/utils*"],
+      "@prisma/*": ["./prisma"],
+      "@services/*": ["./services"]
     }
   },
   "include": [

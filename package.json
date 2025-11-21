@@ -16,6 +16,8 @@
     "tsx": "^4.0.0"
   },
   "dependencies": {
+    "@types/cors": "^2.8.19",
+    "cors": "^2.8.5",
     "ignore": "^7.0.5"
   }
 }
