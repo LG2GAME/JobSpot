@@ -69,11 +69,14 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 ├── .gitignore
 ├── README.md
 ├── backend
-│   ├── README.md
+│   ├── .gitignore
 │   ├── eslint.config.mjs
 │   ├── next.config.ts
 │   ├── package-lock.json
 │   ├── package.json
+│   ├── prisma
+│   │   └── schema.prisma
+│   ├── prisma.config.ts
 │   ├── public
 │   │   ├── file.svg
 │   │   ├── globe.svg
@@ -81,12 +84,28 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   ├── vercel.svg
 │   │   └── window.svg
 │   ├── src
-│   │   └── app
-│   │       ├── favicon.ico
-│   │       ├── globals.css
-│   │       ├── layout.tsx
-│   │       ├── page.module.css
-│   │       └── page.tsx
+│   │   ├── app
+│   │   │   ├── (main)
+│   │   │   │   ├── favicon.ico
+│   │   │   │   ├── globals.css
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── page.module.css
+│   │   │   │   └── page.tsx
+│   │   │   └── api
+│   │   │       ├── login
+│   │   │       │   └── route.ts
+│   │   │       ├── register
+│   │   │       │   └── route.ts
+│   │   │       └── user
+│   │   │           └── route.ts
+│   │   ├── lib
+│   │   │   └── prisma.ts
+│   │   ├── middleware.ts
+│   │   ├── services
+│   │   │   └── user.service.ts
+│   │   └── utils
+│   │       ├── auth.ts
+│   │       └── validation.ts
 │   └── tsconfig.json
 ├── frontend
 │   ├── eslint.config.js
@@ -299,4 +318,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-_21 listopada 2025_
+*21 listopada 2025*
