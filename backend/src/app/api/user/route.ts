@@ -21,11 +21,14 @@ export async function GET(request: Request) {
     console.error("Error in GET /api/user:", error);
 
     if (error instanceof Error && error.message.startsWith("Unauthorized")) {
-      return NextResponse.json({ message: error.message }, { status: 401 });
+      return NextResponse.json(
+        { message: "Brak autoryzacji." },
+        { status: 401 }
+      );
     }
 
     return NextResponse.json(
-      { message: "An internal server error occurred." },
+      { message: "Wystąpił nieoczekiwany błąd serwera." },
       { status: 500 }
     );
   }

@@ -8,7 +8,7 @@ export async function GET() {
   const token = cookieStore.get("authToken")?.value;
 
   if (!token)
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ message: "Brak autoryzacji." }, { status: 401 });
 
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET!) as {
@@ -18,12 +18,15 @@ export async function GET() {
     const user = await prisma.user.findUnique({ where: { id: payload.id } });
 
     if (!user)
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+      return NextResponse.json(
+        { message: "Brak autoryzacji." },
+        { status: 401 }
+      );
 
     const { password, ...safeUser } = user;
 
     return NextResponse.json({ user: safeUser }, { status: 200 });
   } catch {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ message: "Brak autoryzacji." }, { status: 401 });
   }
 }
