@@ -1,33 +1,25 @@
 import { loginUser } from "@/services/user.service";
-import { validateLogin } from "@/utils/validation";
 import { NextResponse } from "next/server";
+import { createAuthCookieHeader } from "@/utils/cookie.util";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { email, password } = body;
+    const { email, password } = await request.json();
+    const { user, token } = await loginUser({ email, password });
 
-    const validationError = validateLogin({ email, password });
+    const cookie = createAuthCookieHeader(token);
 
-    if (validationError != null) {
-      return NextResponse.json(
-        { message: validationError.message },
-        { status: validationError.status }
-      );
-    }
-
-    const safeUser = await loginUser({ email, password });
-
-    return NextResponse.json(safeUser, { status: 200 });
-  } catch (error) {
-    if (error instanceof Error && error.message === "Invalid credentials.") {
-      return NextResponse.json({ message: error.message }, { status: 401 });
-    }
-
-    console.error("Error processing request:", error);
     return NextResponse.json(
-      { message: "An internal server error occurred." },
-      { status: 500 }
+      { user },
+      {
+        status: 200,
+        headers: { "Set-Cookie": cookie },
+      }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: error instanceof Error ? error.message : "Server error" },
+      { status: 401 }
     );
   }
 }
