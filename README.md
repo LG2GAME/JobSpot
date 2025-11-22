@@ -69,12 +69,15 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 ├── .gitignore
 ├── README.md
 ├── backend
-│   ├── .gitignore
+│   ├── docker-compose.yml
 │   ├── eslint.config.mjs
 │   ├── next.config.ts
-│   ├── package-lock.json
 │   ├── package.json
 │   ├── prisma
+│   │   ├── migrations
+│   │   │   ├── 20251122142514_init
+│   │   │   │   └── migration.sql
+│   │   │   └── migration_lock.toml
 │   │   └── schema.prisma
 │   ├── prisma.config.ts
 │   ├── public
@@ -94,6 +97,10 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │   └── api
 │   │   │       ├── login
 │   │   │       │   └── route.ts
+│   │   │       ├── logout
+│   │   │       │   └── route.ts
+│   │   │       ├── me
+│   │   │       │   └── route.ts
 │   │   │       ├── register
 │   │   │       │   └── route.ts
 │   │   │       └── user
@@ -105,6 +112,7 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │   └── user.service.ts
 │   │   └── utils
 │   │       ├── auth.ts
+│   │       ├── cookie.util.ts
 │   │       └── validation.ts
 │   └── tsconfig.json
 ├── frontend
@@ -114,6 +122,8 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   ├── package.json
 │   ├── src
 │   │   ├── App.tsx
+│   │   ├── api
+│   │   │   └── api.ts
 │   │   ├── assets
 │   │   │   ├── icons
 │   │   │   │   ├── email.svg
@@ -154,6 +164,10 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │       ├── mockOffers.json
 │   │   │       └── mockOpinions.json
 │   │   ├── components
+│   │   │   ├── auth
+│   │   │   │   ├── ProtectedRoute.tsx
+│   │   │   │   ├── PublicOnlyRoute.tsx
+│   │   │   │   └── index.ts
 │   │   │   ├── common
 │   │   │   │   ├── button
 │   │   │   │   │   ├── Button.tsx
@@ -239,9 +253,12 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │   ├── useCardWidth.ts
 │   │   │   ├── useDeviceCategory.ts
 │   │   │   ├── useGalleryScroll.ts
+│   │   │   ├── useLogin.ts
+│   │   │   ├── useLogout.ts
 │   │   │   ├── useMediaQuery.ts
 │   │   │   ├── useMobileNavigation.ts
-│   │   │   └── useNavbarHeight.ts
+│   │   │   ├── useNavbarHeight.ts
+│   │   │   └── useRegister.ts
 │   │   ├── main.tsx
 │   │   ├── pages
 │   │   │   ├── account
@@ -280,10 +297,14 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │       └── underConstruction.css.ts
 │   │   ├── routes
 │   │   │   └── routes.tsx
+│   │   ├── store
+│   │   │   └── authStore.ts
 │   │   ├── styles
 │   │   │   ├── globals.css.ts
 │   │   │   ├── index.ts
 │   │   │   └── theme.css.ts
+│   │   ├── types
+│   │   │   └── auth.ts
 │   │   ├── utils
 │   │   │   └── getComputedStyle.ts
 │   │   └── vite-env.d.ts
@@ -318,4 +339,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*21 listopada 2025*
+*22 listopada 2025*
