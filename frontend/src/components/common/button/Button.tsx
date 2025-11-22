@@ -4,6 +4,7 @@ import * as style from "./button.css";
 
 interface ButtonProps {
   children: ReactNode;
+  disabled?: boolean;
   to?: LinkProps["to"];
   href?: string;
   ariaLabel?: string;
@@ -22,6 +23,7 @@ interface ButtonProps {
 
 const Button = ({
   children,
+  disabled,
   to,
   href,
   ariaLabel,
@@ -59,6 +61,7 @@ const Button = ({
       className={style.button({ theme })}
       key={key}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>
