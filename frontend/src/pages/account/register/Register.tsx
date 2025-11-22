@@ -1,10 +1,13 @@
 import { AuthWrapper, Input } from "@components/features";
 import * as style from "./register.css";
-import { useCallback, useState, type ChangeEvent } from "react";
+import React, { useCallback, useState, type ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@components/common";
+import { useRegister } from "@hooks/useRegister";
 
 const Register = () => {
+  const { registerUser, isLoading, error } = useRegister();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,16 +24,22 @@ const Register = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (event: React.FormEvent) => {
+    async (event: React.FormEvent) => {
       event.preventDefault();
-      console.log("Dane formularza: ", formData);
+
+      await registerUser({
+        email: formData.email,
+        password: formData.password,
+        confirmPassword: formData.confirmPassword,
+      });
     },
-    [formData]
+    [formData, registerUser]
   );
 
   return (
     <AuthWrapper>
       <div className={style.registerHeader}>
+        {error && <p>{error}</p>}
         <h3 className={style.registerTitle}>Zarejestruj się</h3>
         <p className={style.registerGreeting}>
           Cieszymy się, że postanowiłeś do nas dołączyć.
@@ -67,7 +76,9 @@ const Register = () => {
         <div className={style.registerActions}>
           <p>Rejestrując się, akceptujesz regulamin i politykę prywatności</p>
         </div>
-        <Button theme="border">Zarejestruj się</Button>
+        <Button theme="border" disabled={isLoading}>
+          {isLoading ? "Rejestracja..." : "Zarejestruj się"}
+        </Button>
       </form>
       <div className={style.registerFooter}>
         <p className={style.registerPrompt}>Masz już konto? Nie trać czasu!</p>

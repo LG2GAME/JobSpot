@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import * as style from "./login.css";
 import { Button } from "@components/common";
 import { useCallback, useState, type ChangeEvent } from "react";
+import { useLogin } from "@hooks/useLogin";
 
 const Login = () => {
+  const { loginUser, isLoading, error } = useLogin();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,16 +24,21 @@ const Login = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (event: React.FormEvent) => {
+    async (event: React.FormEvent) => {
       event.preventDefault();
-      console.log("Dane formularza: ", formData);
+
+      await loginUser({
+        email: formData.email,
+        password: formData.password,
+      });
     },
-    [formData]
+    [formData, loginUser]
   );
 
   return (
     <AuthWrapper>
       <div className={style.loginHeader}>
+        {error && <p>{error}</p>}
         <h3 className={style.loginTitle}>Zaloguj się</h3>
         <p className={style.loginGreeting}>
           Cieszymy się, że znów jesteś z nami.
@@ -71,7 +79,9 @@ const Login = () => {
             Zapomniałem hasło
           </Link>
         </div>
-        <Button theme="border">Zaloguj się</Button>
+        <Button theme="border" disabled={isLoading}>
+          {isLoading ? "Logowanie..." : "Zaloguj się"}
+        </Button>
       </form>
       <div className={style.loginFooter}>
         <p className={style.loginPrompt}>Nie masz jeszcze konta? to nic!</p>
