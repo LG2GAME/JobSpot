@@ -29,9 +29,18 @@ export async function POST(request: Request) {
       }
     );
   } catch (error) {
+    console.error("Login API Error:", error);
+
+    if (error instanceof Error && error.message === "Invalid credentials.") {
+      return NextResponse.json(
+        { message: "Nieprawidłowy email lub hasło." },
+        { status: 401 }
+      );
+    }
+
     return NextResponse.json(
-      { message: error instanceof Error ? error.message : "Server error" },
-      { status: 401 }
+      { message: "Wystąpił nieoczekiwany błąd serwera." },
+      { status: 500 }
     );
   }
 }
