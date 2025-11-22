@@ -5,31 +5,35 @@ const allowedOrigins = ["http://localhost:5173", "http://127.0.0.1:5173"];
 
 export function middleware(request: NextRequest) {
   const origin = request.headers.get("origin");
+  const commonHeaders = {
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Credentials": "true",
+  };
+
+  if (request.method === "OPTIONS") {
+    const headers = new Headers(commonHeaders);
+    if (origin && allowedOrigins.includes(origin)) {
+      headers.set("Access-Control-Allow-Origin", origin);
+    }
+    return new NextResponse(null, { status: 204, headers });
+  }
+
   const response = NextResponse.next();
 
   if (origin && allowedOrigins.includes(origin)) {
     response.headers.set("Access-Control-Allow-Origin", origin);
-    // Optional: Log origin if you want to track valid requests
+
+    Object.entries(commonHeaders).forEach(([key, value]) => {
+      response.headers.set(key, value);
+    });
   } else if (origin) {
     return new NextResponse(null, { status: 403 });
-  }
-
-  response.headers.set(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  response.headers.set(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
-  );
-
-  if (request.method === "OPTIONS") {
-    return new NextResponse(null, { status: 204, headers: response.headers });
   }
 
   return response;
 }
 
 export const config = {
-  matcher: "/api/:path*",
+  matcher: ["/api/:path*", "/auth/:path*"],
 };
