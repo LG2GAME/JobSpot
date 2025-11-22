@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import prisma from "../lib/prisma";
 
 interface User {
   email: string;
@@ -37,8 +38,11 @@ export async function registerUser({ email, password }: User) {
   });
 
   const { password: _password, ...safeUser } = newUser;
+  const token = jwt.sign(safeUser, process.env.JWT_SECRET!, {
+    expiresIn: "1h",
+  });
 
-  return safeUser;
+  return { user: safeUser as SafeUser, token };
 }
 
 export async function loginUser({
@@ -58,9 +62,9 @@ export async function loginUser({
   }
 
   const { password: _password, ...safeUser } = user;
-
   const token = jwt.sign(safeUser, process.env.JWT_SECRET!, {
     expiresIn: "1h",
   });
+
   return { user: safeUser as SafeUser, token };
 }
