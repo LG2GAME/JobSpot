@@ -13,8 +13,7 @@ import {
   Register,
   UnderConstruction,
 } from "@pages/index";
-
-// src/router.tsx
+import { Private, PublicOnly } from "@components/auth";
 
 export const plannedRoutes = [
   "/career",
@@ -56,11 +55,19 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "login",
-        element: <Login />,
+        element: (
+          <PublicOnly>
+            <Login />
+          </PublicOnly>
+        ),
       },
       {
         path: "register",
-        element: <Register />,
+        element: (
+          <PublicOnly>
+            <Register />
+          </PublicOnly>
+        ),
       },
     ],
   },
@@ -75,11 +82,19 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Account />,
+        element: (
+          <Private>
+            <Account />
+          </Private>
+        ),
       },
       {
-        path: "settings",
-        element: <Account />,
+        path: "profile",
+        element: (
+          <Private>
+            <Account />
+          </Private>
+        ),
       },
     ],
   },
