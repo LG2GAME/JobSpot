@@ -30,16 +30,23 @@ export async function POST(request: Request) {
       headers: { "Set-Cookie": cookie },
     });
   } catch (error) {
+    console.error("Registration API Error (409/500):", error);
+
     if (
       error instanceof Error &&
       error.message === "User with this email already exists."
     ) {
-      return NextResponse.json({ message: error.message }, { status: 409 });
+      return NextResponse.json(
+        {
+          field: "email",
+          message: "Użytkownik z tym adresem e-mail już istnieje.",
+        },
+        { status: 409 }
+      );
     }
 
-    console.error("Error processing request:", error);
     return NextResponse.json(
-      { message: "An internal server error occurred." },
+      { message: "Wystąpił nieoczekiwany błąd serwera." },
       { status: 500 }
     );
   }
