@@ -1,6 +1,7 @@
 import { registerUser } from "@/services/user.service";
 import { validateRegistration } from "@/utils/validation";
 import { NextResponse } from "next/server";
+import { createAuthCookieHeader } from "@/utils/cookie.util";
 
 export async function POST(request: Request) {
   try {
@@ -20,9 +21,13 @@ export async function POST(request: Request) {
       );
     }
 
-    const safeUser = await registerUser({ email, password });
+    const { user, token } = await registerUser({ email, password });
+    const cookie = createAuthCookieHeader(token);
 
-    return NextResponse.json(safeUser, { status: 201 });
+    return NextResponse.json(user, {
+      status: 201,
+      headers: { "Set-Cookie": cookie },
+    });
   } catch (error) {
     if (
       error instanceof Error &&
