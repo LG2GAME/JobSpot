@@ -11,12 +11,15 @@
     "types": ["node"],
     "baseUrl": "src",
     "paths": {
+      "@api/*": ["api/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@routes/*": ["routes/*"],
+      "@store/*": ["store/*"],
       "@styles/*": ["styles/*"],
+      "@ltypes/*": ["types/*"],
       "@utils/*": ["utils/*"]
     }
   }
