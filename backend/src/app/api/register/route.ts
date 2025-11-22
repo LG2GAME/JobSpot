@@ -5,9 +5,7 @@ import { createAuthCookieHeader } from "@/utils/cookie.util";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { email, password, confirmPassword } = body;
-
+    const { email, password, confirmPassword } = await request.json();
     const validationError = validateRegistration({
       email,
       password,
@@ -16,7 +14,10 @@ export async function POST(request: Request) {
 
     if (validationError != null) {
       return NextResponse.json(
-        { message: validationError.message },
+        {
+          field: validationError.field,
+          message: validationError.message,
+        },
         { status: validationError.status }
       );
     }
