@@ -8,18 +8,39 @@ export function validateRegistration({
   email,
   password,
   confirmPassword,
-}: RegistrationInputs): { message: string; status: number } | null | undefined {
+}: RegistrationInputs):
+  | { field: string; message: string; status: number }
+  | null
+  | undefined {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!email || !password || !confirmPassword) {
-    return { message: "All fields are required.", status: 400 };
+  if (!email) {
+    return {
+      field: "email",
+      message: "Adres e-mail jest wymagany.",
+      status: 400,
+    };
+  }
+  if (!emailRegex.test(email)) {
+    return {
+      field: "email",
+      message: "Podaj poprawny adres e-mail.",
+      status: 400,
+    };
+  }
+  if (!password) {
+    return {
+      field: "password",
+      message: "Hasło jest wymagane.",
+      status: 400,
+    };
   }
   if (password !== confirmPassword) {
-    return { message: "Passwords do not match.", status: 400 };
-  }
-
-  if (!emailRegex.test(email)) {
-    return { message: "Invalid email format.", status: 400 };
+    return {
+      field: "confirmPassword",
+      message: "Hasła nie są takie same.",
+      status: 400,
+    };
   }
 
   return null;
@@ -31,8 +52,19 @@ interface LoginInputs {
 }
 
 export function validateLogin({ email, password }: LoginInputs) {
-  if (!email || !password) {
-    return { message: "All fields are required.", status: 400 };
+  if (!email) {
+    return {
+      field: "email",
+      message: "Adres e-mail jest wymagany.",
+      status: 400,
+    };
+  }
+  if (!password) {
+    return {
+      field: "password",
+      message: "Hasło jest wymagane.",
+      status: 400,
+    };
   }
 
   return null;
