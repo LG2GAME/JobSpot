@@ -1,11 +1,11 @@
 import { loginUser } from "@/services/user.service";
 import { NextResponse } from "next/server";
-import { createAuthCookieHeader } from "@/utils/cookie.util";
+import { createAuthCookieHeader, getCookieMaxAge } from "@/utils/cookie.util";
 import { validateLogin } from "@/utils/validation";
 
 export async function POST(request: Request) {
   try {
-    const { email, password } = await request.json();
+    const { email, password, rememberMe } = await request.json();
     const validationError = validateLogin({ email, password });
     if (validationError != null) {
       return NextResponse.json(
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     const { user, token } = await loginUser({ email, password });
 
-    const cookie = createAuthCookieHeader(token);
+    const cookie = createAuthCookieHeader(token, getCookieMaxAge(rememberMe));
 
     return NextResponse.json(
       { user },

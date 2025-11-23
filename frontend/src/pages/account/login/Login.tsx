@@ -30,6 +30,7 @@ const Login = () => {
       await loginUser({
         email: formData.email,
         password: formData.password,
+        rememberMe: formData.rememberMe,
       });
     },
     [formData, loginUser]

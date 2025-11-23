@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 interface LoginUser {
   email: string;
   password: string;
+  rememberMe: boolean;
 }
 
 interface BackendError {
@@ -22,7 +23,7 @@ export const useLogin = () => {
   const [generalError, setGeneralError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
 
-  const loginUser = async ({ email, password }: LoginUser) => {
+  const loginUser = async ({ email, password, rememberMe }: LoginUser) => {
     setIsLoading(true);
     setGeneralError(null);
     setFieldErrors({});
@@ -31,6 +32,7 @@ export const useLogin = () => {
       const response = await api.post<AuthResponse>("/api/login", {
         email,
         password,
+        rememberMe,
       });
 
       const { user } = response.data;
