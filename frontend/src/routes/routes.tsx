@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import {
   Layout,
   ErrorLayout,
@@ -6,7 +6,7 @@ import {
   AccountLayout,
 } from "@components/layout";
 import {
-  Account,
+  Profile,
   Home,
   Login,
   NotFound,
@@ -82,17 +82,13 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <Private>
-            <Account />
-          </Private>
-        ),
+        element: <Navigate to="profile" replace />,
       },
       {
         path: "profile",
         element: (
           <Private>
-            <Account />
+            <Profile />
           </Private>
         ),
       },
