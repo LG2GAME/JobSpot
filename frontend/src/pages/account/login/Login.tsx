@@ -6,7 +6,7 @@ import { useCallback, useState, type ChangeEvent } from "react";
 import { useLogin } from "@hooks/useLogin";
 
 const Login = () => {
-  const { loginUser, isLoading, error } = useLogin();
+  const { loginUser, isLoading, generalError, fieldErrors } = useLogin();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -38,7 +38,6 @@ const Login = () => {
   return (
     <AuthWrapper>
       <div className={style.loginHeader}>
-        {error && <p>{error}</p>}
         <h3 className={style.loginTitle}>Zaloguj się</h3>
         <p className={style.loginGreeting}>
           Cieszymy się, że znów jesteś z nami.
@@ -53,6 +52,7 @@ const Login = () => {
           label="Email"
           value={formData.email}
           onChange={handleChange}
+          isInvalid={!!fieldErrors.email || !!generalError}
         />
         <Input
           type="password"
@@ -62,6 +62,7 @@ const Login = () => {
           label="Hasło"
           value={formData.password}
           onChange={handleChange}
+          isInvalid={!!fieldErrors.password || !!generalError}
         />
         <div className={style.loginActions}>
           <Checkbox
@@ -79,6 +80,7 @@ const Login = () => {
             Zapomniałem hasło
           </Link>
         </div>
+        {generalError && <p className={style.loginError}>{generalError}</p>}
         <Button theme="border" disabled={isLoading}>
           {isLoading ? "Logowanie..." : "Zaloguj się"}
         </Button>

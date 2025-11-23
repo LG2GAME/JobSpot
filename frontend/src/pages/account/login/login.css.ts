@@ -38,6 +38,11 @@ export const loginCheckboxLink = style({
   marginLeft: "auto",
 });
 
+export const loginError = style({
+  color: vars.color.errorRed,
+  textDecoration: "underline",
+});
+
 export const loginFooter = style({
   textAlign: "center",
 });

@@ -19,6 +19,7 @@ export const vars = createGlobalTheme(":root", {
     onyx: "#444",
     royalBlueGhost: "#262d7626",
     blackGhost: "#0000000d",
+    errorRed: "#e53935",
   },
   fontSize: {
     xxs: "clamp(8px, 1.2vw, 14px)",

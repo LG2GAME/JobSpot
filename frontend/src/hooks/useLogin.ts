@@ -10,15 +10,22 @@ interface LoginUser {
   password: string;
 }
 
+interface BackendError {
+  field?: string;
+  message: string;
+}
+
 export const useLogin = () => {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [generalError, setGeneralError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
 
   const loginUser = async ({ email, password }: LoginUser) => {
     setIsLoading(true);
-    setError(null);
+    setGeneralError(null);
+    setFieldErrors({});
 
     try {
       const response = await api.post<AuthResponse>("/api/login", {
@@ -32,16 +39,24 @@ export const useLogin = () => {
 
       navigate("/account/profile");
     } catch (error) {
-      let errorMessage = "Unknown server error.";
+      setFieldErrors({});
 
       if (isAxiosError(error) && error.response) {
-        errorMessage = error.response.data?.message || error.message;
+        const errorData = error.response.data as BackendError;
+
+        if (errorData.field) {
+          setFieldErrors({ [errorData.field]: errorData.message });
+          setGeneralError(errorData.message);
+        } else {
+          setGeneralError(errorData.message);
+        }
+      } else {
+        setGeneralError("Wystąpił nieznany błąd.");
       }
-      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
   };
 
-  return { loginUser, isLoading, error };
+  return { loginUser, isLoading, generalError, fieldErrors };
 };
