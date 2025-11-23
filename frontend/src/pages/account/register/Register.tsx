@@ -6,7 +6,7 @@ import { Button } from "@components/common";
 import { useRegister } from "@hooks/useRegister";
 
 const Register = () => {
-  const { registerUser, isLoading, error } = useRegister();
+  const { registerUser, isLoading, generalError, fieldErrors } = useRegister();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -39,7 +39,6 @@ const Register = () => {
   return (
     <AuthWrapper>
       <div className={style.registerHeader}>
-        {error && <p>{error}</p>}
         <h3 className={style.registerTitle}>Zarejestruj się</h3>
         <p className={style.registerGreeting}>
           Cieszymy się, że postanowiłeś do nas dołączyć.
@@ -54,6 +53,7 @@ const Register = () => {
           label="Email"
           value={formData.email}
           onChange={handleChange}
+          isInvalid={!!fieldErrors.email || !!generalError}
         />
         <Input
           type="password"
@@ -63,6 +63,7 @@ const Register = () => {
           label="Hasło"
           value={formData.password}
           onChange={handleChange}
+          isInvalid={!!fieldErrors.password || !!generalError}
         />
         <Input
           type="password"
@@ -72,10 +73,12 @@ const Register = () => {
           label="Hasło"
           value={formData.confirmPassword}
           onChange={handleChange}
+          isInvalid={!!fieldErrors.confirmPassword || !!generalError}
         />
         <div className={style.registerActions}>
           <p>Rejestrując się, akceptujesz regulamin i politykę prywatności</p>
         </div>
+        {generalError && <p className={style.registerError}>{generalError}</p>}
         <Button theme="border" disabled={isLoading}>
           {isLoading ? "Rejestracja..." : "Zarejestruj się"}
         </Button>

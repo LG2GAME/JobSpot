@@ -33,9 +33,9 @@ export const registerActions = style({
   },
 });
 
-export const registerCheckboxLink = style({
+export const registerError = style({
+  color: vars.color.errorRed,
   textDecoration: "underline",
-  marginLeft: "auto",
 });
 
 export const registerFooter = style({
