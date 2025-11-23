@@ -165,6 +165,7 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │       └── mockOpinions.json
 │   │   ├── components
 │   │   │   ├── auth
+│   │   │   │   ├── AuthLoaderWrapper.tsx
 │   │   │   │   ├── ProtectedRoute.tsx
 │   │   │   │   ├── PublicOnlyRoute.tsx
 │   │   │   │   └── index.ts
@@ -262,11 +263,12 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   ├── main.tsx
 │   │   ├── pages
 │   │   │   ├── account
-│   │   │   │   ├── Account.tsx
 │   │   │   │   ├── index.ts
 │   │   │   │   ├── login
 │   │   │   │   │   ├── Login.tsx
 │   │   │   │   │   └── login.css.ts
+│   │   │   │   ├── profile
+│   │   │   │   │   └── Profile.tsx
 │   │   │   │   └── register
 │   │   │   │       ├── Register.tsx
 │   │   │   │       └── register.css.ts
@@ -339,4 +341,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*22 listopada 2025*
+*23 listopada 2025*
