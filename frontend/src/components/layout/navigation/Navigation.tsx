@@ -39,7 +39,7 @@ const Navigation = () => {
           <Link to="/about-us">O nas</Link>
         </li>
         <li className={style.menuItem} onClick={handleMenu}>
-          <Button to="/account">Konto</Button>
+          <Button to="/account/profile">Konto</Button>
         </li>
       </ul>
     </nav>
