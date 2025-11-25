@@ -6,7 +6,8 @@ import { useCallback, useState, type ChangeEvent } from "react";
 import { useLogin } from "@hooks/useLogin";
 
 const Login = () => {
-  const { loginUser, isLoading, generalError, fieldErrors } = useLogin();
+  const { loginUser, isLoading, generalError } = useLogin();
+  const fieldErrors = false;
 
   const [formData, setFormData] = useState({
     email: "",
@@ -27,13 +28,9 @@ const Login = () => {
     async (event: React.FormEvent) => {
       event.preventDefault();
 
-      await loginUser({
-        email: formData.email,
-        password: formData.password,
-        rememberMe: formData.rememberMe,
-      });
+      await loginUser(formData.email, formData.password);
     },
-    [formData, loginUser]
+    [formData.email, formData.password, loginUser]
   );
 
   return (

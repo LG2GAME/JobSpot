@@ -1,4 +1,4 @@
-import { api } from "@api/api";
+import { api, registerWithFetch } from "@api/api";
 import type { AuthResponse } from "@ltypes/auth";
 import { useAuthStore } from "@store/authStore";
 import { isAxiosError } from "axios";
@@ -33,11 +33,11 @@ export const useRegister = () => {
     setFieldErrors({});
 
     try {
-      const response = await api.post<AuthResponse>("/register.php", {
+      const response = await registerWithFetch(
         email,
         password,
-        confirmPassword,
-      });
+        confirmPassword
+      );
 
       const { user } = response.data;
 
@@ -47,14 +47,15 @@ export const useRegister = () => {
     } catch (error) {
       setFieldErrors({});
 
-      if (isAxiosError(error) && error.response) {
-        const errorData = error.response.data as BackendError;
-
-        if (errorData.field) {
-          setFieldErrors({ [errorData.field]: errorData.message });
-          setGeneralError(errorData.message);
+      if (isAxiosError(error)) {
+        if (error.response) {
+          const errorData = error.response.data as any;
+          const message = errorData?.message || "Błąd serwera";
+          setGeneralError(message);
+        } else if (error.request) {
+          setGeneralError("Brak odpowiedzi z serwera (CORS?)");
         } else {
-          setGeneralError(errorData.message);
+          setGeneralError("Błąd połączenia");
         }
       } else {
         setGeneralError("Wystąpił nieznany błąd.");
