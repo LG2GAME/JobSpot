@@ -12,7 +12,7 @@ export const useAuthStatus = () => {
   useEffect(() => {
     const checkStatus = async () => {
       try {
-        const response = await api.get("/api/me");
+        const response = await api.get("/me.php");
 
         useAuthStore.getState().login(response.data);
       } catch (error) {

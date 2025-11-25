@@ -7,7 +7,7 @@ export const useLogout = () => {
 
   const logoutUser = async () => {
     try {
-      await api.post("/api/logout");
+      await api.post("/logout.php");
     } catch (error) {
       console.error("Unknown server error.", error);
     } finally {

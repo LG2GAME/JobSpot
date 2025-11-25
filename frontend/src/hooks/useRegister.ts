@@ -33,7 +33,7 @@ export const useRegister = () => {
     setFieldErrors({});
 
     try {
-      const response = await api.post<AuthResponse>("/api/register", {
+      const response = await api.post<AuthResponse>("/register.php", {
         email,
         password,
         confirmPassword,

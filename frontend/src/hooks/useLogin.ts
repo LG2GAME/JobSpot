@@ -29,7 +29,7 @@ export const useLogin = () => {
     setFieldErrors({});
 
     try {
-      const response = await api.post<AuthResponse>("/api/login", {
+      const response = await api.post<AuthResponse>("/login.php", {
         email,
         password,
         rememberMe,
