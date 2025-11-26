@@ -3,6 +3,7 @@
 # Dependencies
 node_modules
 **/node_modules
+**/postgres-data
 
 # Build output
 dist
