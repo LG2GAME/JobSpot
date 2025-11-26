@@ -1,17 +1,20 @@
 {
-  "name": "jobspot",
+  "name": "jobspot-monorepo",
   "private": true,
   "workspaces": [
-    "frontend",
-    "backend"
+    "apps/*"
   ],
   "scripts": {
-    "start:frontend": "npm --workspace frontend run dev",
-    "start:backend": "npm --workspace backend run dev",
-    "start": "npm run start:frontend",
-    "update-readme": "tsx readmeUpdate.ts"
+    "update-readme": "tsx readmeUpdate.ts",
+    "install:all": "npm install",
+    "dev:backend": "npm --prefix apps/backend run dev",
+    "dev:frontend": "npm --prefix apps/frontend run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "db:up": "docker compose -f infra/db/docker-compose.yml up -d",
+    "db:down": "docker compose -f infra/db/docker-compose.yml down"
   },
   "devDependencies": {
+    "concurrently": "^8.0.0",
     "@types/node": "^24.10.1",
     "tsx": "^4.0.0"
   },
