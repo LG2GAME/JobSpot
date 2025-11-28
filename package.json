@@ -2,24 +2,31 @@
   "name": "jobspot-monorepo",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
-    "update-readme": "tsx readmeUpdate.ts",
-    "install:all": "npm install",
-    "dev:backend": "npm --prefix apps/backend run dev",
-    "dev:frontend": "npm --prefix apps/frontend run dev",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rimraf node_modules **/node_modules **/dist **/.next **/.turbo",
     "db:up": "docker compose -f infra/db/docker-compose.yml up -d",
-    "db:down": "docker compose -f infra/db/docker-compose.yml down"
+    "db:down": "docker compose -f infra/db/docker-compose.yml down",
+    "db:reset": "docker compose -f infra/db/docker-compose.yml down -v && pnpm db:up",
+    "prisma:generate": "turbo run prisma:generate",
+    "update-readme": "tsx readmeUpdate.ts",
+    "postinstall": "turbo run prisma:generate"
   },
   "devDependencies": {
-    "concurrently": "^8.0.0",
-    "@types/node": "^24.10.1",
-    "tsx": "^4.0.0"
+    "turbo": "^2.6.1",
+    "rimraf": "^6.1.2",
+    "concurrently": "^8.2.2",
+    "tsx": "^4.20.6",
+    "@types/node": "^24.10.1"
   },
-  "dependencies": {
-    "@types/cors": "^2.8.19",
-    "ignore": "^7.0.5"
+  "packageManager": "pnpm@9.12.2",
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
