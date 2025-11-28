@@ -71,6 +71,7 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 ├── apps
 │   ├── backend
 │   │   ├── eslint.config.mjs
+│   │   ├── next.config.mjs
 │   │   ├── next.config.ts
 │   │   ├── package.json
 │   │   ├── prisma
@@ -106,7 +107,6 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   └── frontend
 │       ├── eslint.config.js
 │       ├── index.html
-│       ├── package-lock.json
 │       ├── package.json
 │       ├── src
 │       │   ├── App.tsx
@@ -305,8 +305,14 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 ├── infra
 │   └── db
 │       └── docker-compose.yml
-├── package-lock.json
-└── package.json
+├── package.json
+├── packages
+│   ├── types
+│   └── utils
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── tsconfig.base.json
+└── turbo.json
 ```
 <!-- prettier-ignore-end -->
 
@@ -332,4 +338,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*28 listopada 2025*
+_28 listopada 2025_
