@@ -1,5 +1,8 @@
 # GLOBAL IGNORE FOR MONOREPO
 
+# Turborepo
+.turbo/
+
 # Dependencies
 node_modules
 **/node_modules
