@@ -68,252 +68,243 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 ```plaintext
 ├── .gitignore
 ├── README.md
-├── backend
-│   ├── docker-compose.yml
-│   ├── eslint.config.mjs
-│   ├── next.config.ts
-│   ├── package.json
-│   ├── prisma
-│   │   ├── migrations
-│   │   │   ├── 20251122142514_init
-│   │   │   │   └── migration.sql
-│   │   │   └── migration_lock.toml
-│   │   └── schema.prisma
-│   ├── prisma.config.ts
-│   ├── public
-│   │   ├── file.svg
-│   │   ├── globe.svg
-│   │   ├── next.svg
-│   │   ├── vercel.svg
-│   │   └── window.svg
-│   ├── src
-│   │   ├── app
-│   │   │   ├── (main)
-│   │   │   │   ├── favicon.ico
-│   │   │   │   ├── globals.css
-│   │   │   │   ├── layout.tsx
-│   │   │   │   ├── page.module.css
-│   │   │   │   └── page.tsx
-│   │   │   └── api
-│   │   │       ├── login
-│   │   │       │   └── route.ts
-│   │   │       ├── logout
-│   │   │       │   └── route.ts
-│   │   │       ├── me
-│   │   │       │   └── route.ts
-│   │   │       ├── register
-│   │   │       │   └── route.ts
-│   │   │       └── user
-│   │   │           └── route.ts
-│   │   ├── lib
-│   │   │   └── prisma.ts
-│   │   ├── middleware.ts
-│   │   ├── services
-│   │   │   └── user.service.ts
-│   │   └── utils
-│   │       ├── auth.ts
-│   │       ├── cookie.util.ts
-│   │       └── validation.ts
-│   └── tsconfig.json
-├── frontend
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── src
-│   │   ├── App.tsx
-│   │   ├── api
-│   │   │   └── api.ts
-│   │   ├── assets
-│   │   │   ├── icons
-│   │   │   │   ├── email.svg
-│   │   │   │   ├── facebook.svg
-│   │   │   │   ├── gps.svg
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── instagram.svg
-│   │   │   │   ├── linkedin.svg
-│   │   │   │   ├── localisation.png
-│   │   │   │   ├── phone.svg
-│   │   │   │   ├── search.svg
-│   │   │   │   ├── time-job.png
-│   │   │   │   └── youtube.svg
-│   │   │   ├── images
-│   │   │   │   ├── apostrophe.png
-│   │   │   │   ├── arrow-off.png
-│   │   │   │   ├── arrow-on.png
-│   │   │   │   ├── auth-backdrop.png
-│   │   │   │   ├── cat-electrician.png
-│   │   │   │   ├── cat-engineering.png
-│   │   │   │   ├── cat-finance.png
-│   │   │   │   ├── cat-marketing.png
-│   │   │   │   ├── cat-media.png
-│   │   │   │   ├── cat-product.png
-│   │   │   │   ├── cat-projects.png
-│   │   │   │   ├── cat-services.png
-│   │   │   │   ├── ellipse.png
-│   │   │   │   ├── es-account.png
-│   │   │   │   ├── es-apply.png
-│   │   │   │   ├── es-cv.png
-│   │   │   │   ├── in-progress.png
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── learning-pana.png
-│   │   │   │   ├── multiple-choice.png
-│   │   │   │   └── not-found.png
-│   │   │   └── mockDatas
-│   │   │       ├── mockCategories.ts
-│   │   │       ├── mockOffers.json
-│   │   │       └── mockOpinions.json
-│   │   ├── components
-│   │   │   ├── auth
-│   │   │   │   ├── AuthLoaderWrapper.tsx
-│   │   │   │   ├── ProtectedRoute.tsx
-│   │   │   │   ├── PublicOnlyRoute.tsx
-│   │   │   │   └── index.ts
-│   │   │   ├── common
-│   │   │   │   ├── button
-│   │   │   │   │   ├── Button.tsx
-│   │   │   │   │   └── button.css.ts
-│   │   │   │   ├── card
-│   │   │   │   │   ├── Card.tsx
-│   │   │   │   │   └── card.css.ts
-│   │   │   │   ├── cardWrapper
-│   │   │   │   │   ├── CardWrapper.tsx
-│   │   │   │   │   └── cardWrapper.css.ts
-│   │   │   │   ├── headline
-│   │   │   │   │   ├── Headline.tsx
-│   │   │   │   │   └── headline.css.ts
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── section
-│   │   │   │   │   ├── Section.tsx
-│   │   │   │   │   └── section.css.ts
-│   │   │   │   └── track
-│   │   │   │       ├── Track.tsx
-│   │   │   │       └── track.css.ts
-│   │   │   ├── features
-│   │   │   │   ├── account
-│   │   │   │   │   ├── authWrapper
-│   │   │   │   │   │   ├── AuthWrapper.tsx
-│   │   │   │   │   │   └── authWrapper.css.ts
-│   │   │   │   │   ├── components
-│   │   │   │   │   │   ├── checkbox
-│   │   │   │   │   │   │   ├── Checkbox.tsx
-│   │   │   │   │   │   │   └── checkbox.css.ts
-│   │   │   │   │   │   ├── index.ts
-│   │   │   │   │   │   └── input
-│   │   │   │   │   │       ├── Input.tsx
-│   │   │   │   │   │       └── input.css.ts
-│   │   │   │   │   └── index.ts
-│   │   │   │   ├── gallery
-│   │   │   │   │   ├── Gallery.tsx
-│   │   │   │   │   ├── components
-│   │   │   │   │   │   ├── galleryCard
-│   │   │   │   │   │   │   ├── GalleryCard.tsx
-│   │   │   │   │   │   │   └── galleryCard.css.ts
-│   │   │   │   │   │   ├── galleryControls
-│   │   │   │   │   │   │   ├── GalleryControls.tsx
-│   │   │   │   │   │   │   └── galleryControls.css.ts
-│   │   │   │   │   │   ├── galleryFilters
-│   │   │   │   │   │   │   ├── GalleryFilters.tsx
-│   │   │   │   │   │   │   └── galleryFilters.css.ts
-│   │   │   │   │   │   └── index.ts
-│   │   │   │   │   ├── gallery.css.ts
-│   │   │   │   │   └── index.ts
-│   │   │   │   ├── index.ts
-│   │   │   │   └── opinionsSlider
-│   │   │   │       ├── OpinionsSlider.tsx
-│   │   │   │       ├── components
-│   │   │   │       │   ├── index.ts
-│   │   │   │       │   ├── opinionCard
-│   │   │   │       │   │   ├── OpinionCard.tsx
-│   │   │   │       │   │   └── opinionCard.css.ts
-│   │   │   │       │   └── sliderProgress
-│   │   │   │       │       ├── SliderProgress.tsx
-│   │   │   │       │       └── sliderProgress.css.ts
-│   │   │   │       ├── hooks
-│   │   │   │       │   └── useAutoScroll.ts
-│   │   │   │       ├── index.ts
-│   │   │   │       └── opinionSlider.css.ts
-│   │   │   └── layout
-│   │   │       ├── Layout.tsx
-│   │   │       ├── authNavigation
-│   │   │       │   ├── AuthNavigation.tsx
-│   │   │       │   └── authNavigation.css.ts
-│   │   │       ├── backdrop
-│   │   │       │   ├── Backdrop.tsx
-│   │   │       │   └── backdrop.css.ts
-│   │   │       ├── footer
-│   │   │       │   ├── Footer.tsx
-│   │   │       │   └── footer.css.ts
-│   │   │       ├── index.ts
-│   │   │       └── navigation
-│   │   │           ├── MenuToggle.tsx
-│   │   │           ├── Navigation.tsx
-│   │   │           └── navigation.css.ts
-│   │   ├── hooks
-│   │   │   ├── useAuthStatus.ts
-│   │   │   ├── useCardWidth.ts
-│   │   │   ├── useDeviceCategory.ts
-│   │   │   ├── useGalleryScroll.ts
-│   │   │   ├── useLogin.ts
-│   │   │   ├── useLogout.ts
-│   │   │   ├── useMediaQuery.ts
-│   │   │   ├── useMobileNavigation.ts
-│   │   │   ├── useNavbarHeight.ts
-│   │   │   └── useRegister.ts
-│   │   ├── main.tsx
-│   │   ├── pages
-│   │   │   ├── account
-│   │   │   │   ├── index.ts
-│   │   │   │   ├── login
-│   │   │   │   │   ├── Login.tsx
-│   │   │   │   │   └── login.css.ts
-│   │   │   │   ├── profile
-│   │   │   │   │   └── Profile.tsx
-│   │   │   │   └── register
-│   │   │   │       ├── Register.tsx
-│   │   │   │       └── register.css.ts
-│   │   │   ├── home
-│   │   │   │   ├── Home.tsx
-│   │   │   │   ├── getStarted
-│   │   │   │   │   ├── GetStarted.tsx
-│   │   │   │   │   └── getStarted.css.ts
-│   │   │   │   ├── hero
-│   │   │   │   │   ├── Hero.tsx
-│   │   │   │   │   └── hero.css.ts
-│   │   │   │   ├── jobCategories
-│   │   │   │   │   ├── JobCategories.tsx
-│   │   │   │   │   └── jobCategories.css.ts
-│   │   │   │   ├── jobGalleries
-│   │   │   │   │   └── JobGalleries.tsx
-│   │   │   │   ├── jobInfo
-│   │   │   │   │   ├── JobInfo.tsx
-│   │   │   │   │   └── jobInfo.css.ts
-│   │   │   │   └── opinions
-│   │   │   │       └── Opinions.tsx
-│   │   │   ├── index.ts
-│   │   │   ├── notFound
-│   │   │   │   ├── NotFound.tsx
-│   │   │   │   └── notFound.css.ts
-│   │   │   └── underConstruction
-│   │   │       ├── UnderConstruction.tsx
-│   │   │       └── underConstruction.css.ts
-│   │   ├── routes
-│   │   │   └── routes.tsx
-│   │   ├── store
-│   │   │   └── authStore.ts
-│   │   ├── styles
-│   │   │   ├── globals.css.ts
-│   │   │   ├── index.ts
-│   │   │   └── theme.css.ts
-│   │   ├── types
-│   │   │   └── auth.ts
-│   │   ├── utils
-│   │   │   └── getComputedStyle.ts
-│   │   └── vite-env.d.ts
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   └── vite.config.ts
+├── apps
+│   ├── backend
+│   │   ├── eslint.config.mjs
+│   │   ├── next.config.ts
+│   │   ├── package.json
+│   │   ├── prisma
+│   │   │   ├── migrations
+│   │   │   │   ├── 20251122142514_init
+│   │   │   │   │   └── migration.sql
+│   │   │   │   └── migration_lock.toml
+│   │   │   └── schema.prisma
+│   │   ├── prisma.config.ts
+│   │   ├── src
+│   │   │   ├── app
+│   │   │   │   └── api
+│   │   │   │       ├── login
+│   │   │   │       │   └── route.ts
+│   │   │   │       ├── logout
+│   │   │   │       │   └── route.ts
+│   │   │   │       ├── me
+│   │   │   │       │   └── route.ts
+│   │   │   │       ├── register
+│   │   │   │       │   └── route.ts
+│   │   │   │       └── user
+│   │   │   │           └── route.ts
+│   │   │   ├── lib
+│   │   │   │   └── prisma.ts
+│   │   │   ├── middleware.ts
+│   │   │   ├── services
+│   │   │   │   └── user.service.ts
+│   │   │   └── utils
+│   │   │       ├── auth.ts
+│   │   │       ├── cookie.util.ts
+│   │   │       └── validation.ts
+│   │   └── tsconfig.json
+│   └── frontend
+│       ├── eslint.config.js
+│       ├── index.html
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── src
+│       │   ├── App.tsx
+│       │   ├── api
+│       │   │   └── api.ts
+│       │   ├── assets
+│       │   │   ├── icons
+│       │   │   │   ├── email.svg
+│       │   │   │   ├── facebook.svg
+│       │   │   │   ├── gps.svg
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── instagram.svg
+│       │   │   │   ├── linkedin.svg
+│       │   │   │   ├── localisation.png
+│       │   │   │   ├── phone.svg
+│       │   │   │   ├── search.svg
+│       │   │   │   ├── time-job.png
+│       │   │   │   └── youtube.svg
+│       │   │   ├── images
+│       │   │   │   ├── apostrophe.png
+│       │   │   │   ├── arrow-off.png
+│       │   │   │   ├── arrow-on.png
+│       │   │   │   ├── auth-backdrop.png
+│       │   │   │   ├── cat-electrician.png
+│       │   │   │   ├── cat-engineering.png
+│       │   │   │   ├── cat-finance.png
+│       │   │   │   ├── cat-marketing.png
+│       │   │   │   ├── cat-media.png
+│       │   │   │   ├── cat-product.png
+│       │   │   │   ├── cat-projects.png
+│       │   │   │   ├── cat-services.png
+│       │   │   │   ├── ellipse.png
+│       │   │   │   ├── es-account.png
+│       │   │   │   ├── es-apply.png
+│       │   │   │   ├── es-cv.png
+│       │   │   │   ├── in-progress.png
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── learning-pana.png
+│       │   │   │   ├── multiple-choice.png
+│       │   │   │   └── not-found.png
+│       │   │   └── mockDatas
+│       │   │       ├── mockCategories.ts
+│       │   │       ├── mockOffers.json
+│       │   │       └── mockOpinions.json
+│       │   ├── components
+│       │   │   ├── auth
+│       │   │   │   ├── AuthLoaderWrapper.tsx
+│       │   │   │   ├── ProtectedRoute.tsx
+│       │   │   │   ├── PublicOnlyRoute.tsx
+│       │   │   │   └── index.ts
+│       │   │   ├── common
+│       │   │   │   ├── button
+│       │   │   │   │   ├── Button.tsx
+│       │   │   │   │   └── button.css.ts
+│       │   │   │   ├── card
+│       │   │   │   │   ├── Card.tsx
+│       │   │   │   │   └── card.css.ts
+│       │   │   │   ├── cardWrapper
+│       │   │   │   │   ├── CardWrapper.tsx
+│       │   │   │   │   └── cardWrapper.css.ts
+│       │   │   │   ├── headline
+│       │   │   │   │   ├── Headline.tsx
+│       │   │   │   │   └── headline.css.ts
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── section
+│       │   │   │   │   ├── Section.tsx
+│       │   │   │   │   └── section.css.ts
+│       │   │   │   └── track
+│       │   │   │       ├── Track.tsx
+│       │   │   │       └── track.css.ts
+│       │   │   ├── features
+│       │   │   │   ├── account
+│       │   │   │   │   ├── authWrapper
+│       │   │   │   │   │   ├── AuthWrapper.tsx
+│       │   │   │   │   │   └── authWrapper.css.ts
+│       │   │   │   │   ├── components
+│       │   │   │   │   │   ├── checkbox
+│       │   │   │   │   │   │   ├── Checkbox.tsx
+│       │   │   │   │   │   │   └── checkbox.css.ts
+│       │   │   │   │   │   ├── index.ts
+│       │   │   │   │   │   └── input
+│       │   │   │   │   │       ├── Input.tsx
+│       │   │   │   │   │       └── input.css.ts
+│       │   │   │   │   └── index.ts
+│       │   │   │   ├── gallery
+│       │   │   │   │   ├── Gallery.tsx
+│       │   │   │   │   ├── components
+│       │   │   │   │   │   ├── galleryCard
+│       │   │   │   │   │   │   ├── GalleryCard.tsx
+│       │   │   │   │   │   │   └── galleryCard.css.ts
+│       │   │   │   │   │   ├── galleryControls
+│       │   │   │   │   │   │   ├── GalleryControls.tsx
+│       │   │   │   │   │   │   └── galleryControls.css.ts
+│       │   │   │   │   │   ├── galleryFilters
+│       │   │   │   │   │   │   ├── GalleryFilters.tsx
+│       │   │   │   │   │   │   └── galleryFilters.css.ts
+│       │   │   │   │   │   └── index.ts
+│       │   │   │   │   ├── gallery.css.ts
+│       │   │   │   │   └── index.ts
+│       │   │   │   ├── index.ts
+│       │   │   │   └── opinionsSlider
+│       │   │   │       ├── OpinionsSlider.tsx
+│       │   │   │       ├── components
+│       │   │   │       │   ├── index.ts
+│       │   │   │       │   ├── opinionCard
+│       │   │   │       │   │   ├── OpinionCard.tsx
+│       │   │   │       │   │   └── opinionCard.css.ts
+│       │   │   │       │   └── sliderProgress
+│       │   │   │       │       ├── SliderProgress.tsx
+│       │   │   │       │       └── sliderProgress.css.ts
+│       │   │   │       ├── hooks
+│       │   │   │       │   └── useAutoScroll.ts
+│       │   │   │       ├── index.ts
+│       │   │   │       └── opinionSlider.css.ts
+│       │   │   └── layout
+│       │   │       ├── Layout.tsx
+│       │   │       ├── authNavigation
+│       │   │       │   ├── AuthNavigation.tsx
+│       │   │       │   └── authNavigation.css.ts
+│       │   │       ├── backdrop
+│       │   │       │   ├── Backdrop.tsx
+│       │   │       │   └── backdrop.css.ts
+│       │   │       ├── footer
+│       │   │       │   ├── Footer.tsx
+│       │   │       │   └── footer.css.ts
+│       │   │       ├── index.ts
+│       │   │       └── navigation
+│       │   │           ├── MenuToggle.tsx
+│       │   │           ├── Navigation.tsx
+│       │   │           └── navigation.css.ts
+│       │   ├── hooks
+│       │   │   ├── useAuthStatus.ts
+│       │   │   ├── useCardWidth.ts
+│       │   │   ├── useDeviceCategory.ts
+│       │   │   ├── useGalleryScroll.ts
+│       │   │   ├── useLogin.ts
+│       │   │   ├── useLogout.ts
+│       │   │   ├── useMediaQuery.ts
+│       │   │   ├── useMobileNavigation.ts
+│       │   │   ├── useNavbarHeight.ts
+│       │   │   └── useRegister.ts
+│       │   ├── main.tsx
+│       │   ├── pages
+│       │   │   ├── account
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── login
+│       │   │   │   │   ├── Login.tsx
+│       │   │   │   │   └── login.css.ts
+│       │   │   │   ├── profile
+│       │   │   │   │   └── Profile.tsx
+│       │   │   │   └── register
+│       │   │   │       ├── Register.tsx
+│       │   │   │       └── register.css.ts
+│       │   │   ├── home
+│       │   │   │   ├── Home.tsx
+│       │   │   │   ├── getStarted
+│       │   │   │   │   ├── GetStarted.tsx
+│       │   │   │   │   └── getStarted.css.ts
+│       │   │   │   ├── hero
+│       │   │   │   │   ├── Hero.tsx
+│       │   │   │   │   └── hero.css.ts
+│       │   │   │   ├── jobCategories
+│       │   │   │   │   ├── JobCategories.tsx
+│       │   │   │   │   └── jobCategories.css.ts
+│       │   │   │   ├── jobGalleries
+│       │   │   │   │   └── JobGalleries.tsx
+│       │   │   │   ├── jobInfo
+│       │   │   │   │   ├── JobInfo.tsx
+│       │   │   │   │   └── jobInfo.css.ts
+│       │   │   │   └── opinions
+│       │   │   │       └── Opinions.tsx
+│       │   │   ├── index.ts
+│       │   │   ├── notFound
+│       │   │   │   ├── NotFound.tsx
+│       │   │   │   └── notFound.css.ts
+│       │   │   └── underConstruction
+│       │   │       ├── UnderConstruction.tsx
+│       │   │       └── underConstruction.css.ts
+│       │   ├── routes
+│       │   │   └── routes.tsx
+│       │   ├── store
+│       │   │   └── authStore.ts
+│       │   ├── styles
+│       │   │   ├── globals.css.ts
+│       │   │   ├── index.ts
+│       │   │   └── theme.css.ts
+│       │   ├── types
+│       │   │   └── auth.ts
+│       │   ├── utils
+│       │   │   └── getComputedStyle.ts
+│       │   └── vite-env.d.ts
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.node.json
+│       └── vite.config.ts
+├── infra
+│   └── db
+│       └── docker-compose.yml
 ├── package-lock.json
 └── package.json
 ```
@@ -341,4 +332,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-*23 listopada 2025*
+*28 listopada 2025*
