@@ -1,20 +1,10 @@
 import { Card, Button } from "@components/common";
 import * as style from "./galleryCard.css";
 import { icon } from "@assets/icons";
-
-interface OfferProps {
-  logo?: string;
-  title?: string;
-  company?: string;
-  date?: string;
-  description?: string;
-  location?: string;
-  jobType?: string;
-  jobLink?: string;
-}
+import type { Offer } from "@ltypes";
 
 interface GalleryCardProps {
-  offer: OfferProps;
+  offer: Offer;
 }
 
 const formatFirstPart = (value: string) => {

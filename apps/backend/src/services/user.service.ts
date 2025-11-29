@@ -1,23 +1,12 @@
+import type { AuthResponse, SafeUser } from "@ltypes";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import prisma from "../lib/prisma";
+import prisma from "@lib/prisma";
 
 interface User {
   email: string;
   password: string;
 }
-
-export type SafeUser = {
-  id: number;
-  email: string;
-  createdAt: Date;
-  updatedAt: Date;
-};
-
-export type AuthResponse = {
-  user: SafeUser;
-  token: string;
-};
 
 export async function registerUser({ email, password }: User) {
   const existingUser = await prisma!.user.findUnique({

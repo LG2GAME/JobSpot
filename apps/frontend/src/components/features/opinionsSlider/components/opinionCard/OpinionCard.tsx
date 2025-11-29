@@ -1,16 +1,10 @@
 import { Card } from "@components/common";
 import * as style from "./opinionCard.css";
 import { image } from "@assets/images";
-
-interface CommentsProps {
-  image?: string;
-  name?: string;
-  job?: string;
-  comment?: string;
-}
+import type { Comment } from "@ltypes";
 
 interface OpinionCardProps {
-  comment: CommentsProps;
+  comment: Comment;
 }
 
 const OpinionCard = ({ comment }: OpinionCardProps) => {

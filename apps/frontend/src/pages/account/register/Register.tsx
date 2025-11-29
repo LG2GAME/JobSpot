@@ -4,11 +4,12 @@ import React, { useCallback, useState, type ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@components/common";
 import { useRegister } from "@hooks/useRegister";
+import type { RegisterCredentials } from "@ltypes";
 
 const Register = () => {
   const { registerUser, isLoading, generalError, fieldErrors } = useRegister();
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<RegisterCredentials>({
     email: "",
     password: "",
     confirmPassword: "",
@@ -85,7 +86,7 @@ const Register = () => {
       </form>
       <div className={style.registerFooter}>
         <p className={style.registerPrompt}>Masz już konto? Nie trać czasu!</p>
-        <Link to="/account/register" className={style.registerLink}>
+        <Link to="/account/login" className={style.registerLink}>
           Zaloguj się
         </Link>
       </div>

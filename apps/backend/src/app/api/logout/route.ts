@@ -1,5 +1,5 @@
-import { serialize } from "cookie";
 import { NextResponse } from "next/server";
+import { serialize } from "cookie";
 
 export async function POST() {
   const expiredCookie = serialize("authToken", "", {

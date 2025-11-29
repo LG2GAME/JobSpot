@@ -1,9 +1,8 @@
-import type { SafeUser } from "@ltypes/auth";
+import type { SafeUser } from "@ltypes";
 import { create } from "zustand";
 
 interface AuthStore {
   user: SafeUser | null;
-
   login: (user: SafeUser) => void;
   logout: () => void;
 }

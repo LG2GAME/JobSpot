@@ -1,20 +1,9 @@
 import { isAxiosError } from "axios";
 import { useAuthStore } from "@store/authStore";
-import type { AuthResponse } from "@ltypes/auth";
+import type { ApiErrorResponse, AuthResponse, LoginCredentials } from "@ltypes";
 import { useState } from "react";
 import { api } from "@api/api";
 import { useNavigate } from "react-router-dom";
-
-interface LoginUser {
-  email: string;
-  password: string;
-  rememberMe: boolean;
-}
-
-interface BackendError {
-  field?: string;
-  message: string;
-}
 
 export const useLogin = () => {
   const navigate = useNavigate();
@@ -23,7 +12,11 @@ export const useLogin = () => {
   const [generalError, setGeneralError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
 
-  const loginUser = async ({ email, password, rememberMe }: LoginUser) => {
+  const loginUser = async ({
+    email,
+    password,
+    rememberMe,
+  }: LoginCredentials) => {
     setIsLoading(true);
     setGeneralError(null);
     setFieldErrors({});
@@ -44,7 +37,7 @@ export const useLogin = () => {
       setFieldErrors({});
 
       if (isAxiosError(error) && error.response) {
-        const errorData = error.response.data as BackendError;
+        const errorData = error.response.data as ApiErrorResponse;
 
         if (errorData.field) {
           setFieldErrors({ [errorData.field]: errorData.message });

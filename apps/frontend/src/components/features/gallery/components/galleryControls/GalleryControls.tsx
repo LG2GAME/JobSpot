@@ -2,14 +2,19 @@ import { Button } from "@components/common";
 import * as style from "./galleryControls.css";
 import { image } from "@assets/images";
 
-interface Props {
+interface ControllsProps {
   onNext: () => void;
   onPrev: () => void;
   offset: number;
   maxOffset: number;
 }
 
-const GalleryControls = ({ onNext, onPrev, offset, maxOffset }: Props) => {
+const GalleryControls = ({
+  onNext,
+  onPrev,
+  offset,
+  maxOffset,
+}: ControllsProps) => {
   return (
     <div className={style.buttonWrapper}>
       <Button

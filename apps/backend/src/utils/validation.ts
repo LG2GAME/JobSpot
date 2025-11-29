@@ -1,17 +1,10 @@
-interface RegistrationInputs {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import { LoginInputs, RegistrationInputs, ValidationError } from "@ltypes";
 
 export function validateRegistration({
   email,
   password,
   confirmPassword,
-}: RegistrationInputs):
-  | { field: string; message: string; status: number }
-  | null
-  | undefined {
+}: RegistrationInputs): ValidationError {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!email) {
@@ -44,11 +37,6 @@ export function validateRegistration({
   }
 
   return null;
-}
-
-interface LoginInputs {
-  email: string;
-  password: string;
 }
 
 export function validateLogin({ email, password }: LoginInputs) {

@@ -1,20 +1,13 @@
 import { api } from "@api/api";
-import type { AuthResponse } from "@ltypes/auth";
+import type {
+  ApiErrorResponse,
+  AuthResponse,
+  RegisterCredentials,
+} from "@ltypes";
 import { useAuthStore } from "@store/authStore";
 import { isAxiosError } from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-interface RegisterUser {
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-
-interface BackendError {
-  field?: string;
-  message: string;
-}
 
 export const useRegister = () => {
   const navigate = useNavigate();
@@ -27,7 +20,7 @@ export const useRegister = () => {
     email,
     password,
     confirmPassword,
-  }: RegisterUser) => {
+  }: RegisterCredentials) => {
     setIsLoading(true);
     setGeneralError(null);
     setFieldErrors({});
@@ -48,7 +41,7 @@ export const useRegister = () => {
       setFieldErrors({});
 
       if (isAxiosError(error) && error.response) {
-        const errorData = error.response.data as BackendError;
+        const errorData = error.response.data as ApiErrorResponse;
 
         if (errorData.field) {
           setFieldErrors({ [errorData.field]: errorData.message });

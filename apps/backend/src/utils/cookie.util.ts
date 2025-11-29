@@ -18,7 +18,7 @@ export const getCookieMaxAge = (rememberMe: boolean): number | undefined => {
 
 export function createAuthCookieHeader(
   token: string,
-  maxCookieAge: number | undefined
+  maxCookieAge?: number | undefined
 ): string {
   return serialize("authToken", token, {
     httpOnly: true,

@@ -1,7 +1,7 @@
-import { loginUser } from "@/services/user.service";
+import { createAuthCookieHeader, getCookieMaxAge } from "@utils/cookie.util";
+import { loginUser } from "@services/user.service";
 import { NextResponse } from "next/server";
-import { createAuthCookieHeader, getCookieMaxAge } from "@/utils/cookie.util";
-import { validateLogin } from "@/utils/validation";
+import { validateLogin } from "@utils/validation";
 
 export async function POST(request: Request) {
   try {

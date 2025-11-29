@@ -1,7 +1,7 @@
-import { registerUser } from "@/services/user.service";
-import { validateRegistration } from "@/utils/validation";
+import { createAuthCookieHeader } from "@utils/cookie.util";
 import { NextResponse } from "next/server";
-import { createAuthCookieHeader } from "@/utils/cookie.util";
+import { registerUser } from "@services/user.service";
+import { validateRegistration } from "@utils/validation";
 
 export async function POST(request: Request) {
   try {

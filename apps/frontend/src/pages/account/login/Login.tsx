@@ -4,11 +4,12 @@ import * as style from "./login.css";
 import { Button } from "@components/common";
 import { useCallback, useState, type ChangeEvent } from "react";
 import { useLogin } from "@hooks/useLogin";
+import type { LoginCredentials } from "@ltypes";
 
 const Login = () => {
   const { loginUser, isLoading, generalError, fieldErrors } = useLogin();
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<LoginCredentials>({
     email: "",
     password: "",
     rememberMe: false,

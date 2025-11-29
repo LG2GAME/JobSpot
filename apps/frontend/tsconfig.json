@@ -19,7 +19,7 @@
       "@routes/*": ["routes/*"],
       "@store/*": ["store/*"],
       "@styles/*": ["styles/*"],
-      "@ltypes/*": ["types/*"],
+      "@ltypes": ["types/index.ts"],
       "@utils/*": ["utils/*"]
     }
   }

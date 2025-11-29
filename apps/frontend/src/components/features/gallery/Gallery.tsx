@@ -6,17 +6,7 @@ import { useGalleryScroll } from "@hooks/useGalleryScroll";
 import { Button, Track } from "@components/common";
 
 import mockOffers from "@assets/mockDatas/mockOffers.json";
-
-interface GalleryOffer {
-  logo?: string;
-  title?: string;
-  company?: string;
-  date?: string;
-  description?: string;
-  location?: string;
-  jobType?: string;
-  jobLink?: string;
-}
+import type { Offer } from "@ltypes";
 
 const filterOptions = [
   { id: "hot", label: "Gorące oferty" },
@@ -57,7 +47,7 @@ const Gallery = () => {
         galleryRef={galleryRef}
         items={mockOffers.slice(0, totalItems)}
         Wrapper={GalleryCard}
-        wrapperPropsMapper={(offer: GalleryOffer) => ({ offer })}
+        wrapperPropsMapper={(offer: Offer) => ({ offer })}
       />
       <div className={style.galleryButton}>
         <Button theme="accent" to="/">

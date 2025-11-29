@@ -1,10 +1,7 @@
+import { TokenPayload } from "@ltypes";
 import jwt from "jsonwebtoken";
 
-export interface TokenPayload {
-  id: number;
-}
-
-export async function verifyAuthToken(request: Request) {
+export async function verifyAuthToken(request: Request): Promise<number> {
   const authorizationHeader = request.headers.get("Authorization");
 
   if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {

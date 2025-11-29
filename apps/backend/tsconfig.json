@@ -22,8 +22,9 @@
       "@/*": ["./src/*"],
       "@lib/*": ["./src/lib/*"],
       "@prisma/*": ["./prisma"],
-      "@services/*": ["./services"],
-      "@utils/*": ["./src/utils*"]
+      "@services/*": ["./src/services/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@ltypes": ["./src/types/index.ts"]
     }
   },
   "include": [

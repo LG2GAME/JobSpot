@@ -6,13 +6,7 @@ import { useRef } from "react";
 import { useGalleryScroll } from "@hooks/useGalleryScroll";
 import * as style from "./opinionSlider.css";
 import { useAutoScroll } from "./hooks/useAutoScroll";
-
-interface SliderComments {
-  image?: string;
-  name?: string;
-  job?: string;
-  comment?: string;
-}
+import type { Comment } from "@ltypes";
 
 const OpinionsSlider = () => {
   const opinionWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -40,7 +34,7 @@ const OpinionsSlider = () => {
         galleryRef={galleryRef}
         items={mockComments.slice(0, totalItems)}
         Wrapper={OpinionCard}
-        wrapperPropsMapper={(comment: SliderComments) => ({ comment })}
+        wrapperPropsMapper={(comment: Comment) => ({ comment })}
       />
       <SliderProgress
         offset={offset}
