@@ -67,6 +67,7 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 <!-- prettier-ignore-start -->
 ```plaintext
 ├── .gitignore
+├── .turbo
 ├── README.md
 ├── apps
 │   ├── backend
@@ -99,6 +100,11 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   │   │   ├── middleware.ts
 │   │   │   ├── services
 │   │   │   │   └── user.service.ts
+│   │   │   ├── types
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── user.ts
+│   │   │   │   └── validation.ts
 │   │   │   └── utils
 │   │   │       ├── auth.ts
 │   │   │       ├── cookie.util.ts
@@ -294,7 +300,10 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │       │   │   ├── index.ts
 │       │   │   └── theme.css.ts
 │       │   ├── types
-│       │   │   └── auth.ts
+│       │   │   ├── auth.ts
+│       │   │   ├── comment.ts
+│       │   │   ├── index.ts
+│       │   │   └── jobOffer.ts
 │       │   ├── utils
 │       │   │   └── getComputedStyle.ts
 │       │   └── vite-env.d.ts
@@ -306,9 +315,6 @@ W kolejnych etapach planowane jest wdrożenie logiki backendowej, integracji z b
 │   └── db
 │       └── docker-compose.yml
 ├── package.json
-├── packages
-│   ├── types
-│   └── utils
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
 ├── tsconfig.base.json
@@ -338,4 +344,4 @@ Aplikacja została stworzona na potrzeby projektu i jest własnością twórcy. 
 
 ## Ostatnia aktualizacja
 
-_28 listopada 2025_
+*29 listopada 2025*
