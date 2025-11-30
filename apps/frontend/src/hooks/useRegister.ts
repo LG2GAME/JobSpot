@@ -1,9 +1,6 @@
 import { api } from "@api/api";
-import type {
-  ApiErrorResponse,
-  AuthResponse,
-  RegisterCredentials,
-} from "@ltypes";
+import type { ApiErrorResponseError, AuthResponse } from "@jobspot/types";
+import type { RegisterCredentials } from "@ltypes";
 import { useAuthStore } from "@store/authStore";
 import { isAxiosError } from "axios";
 import { useState } from "react";
@@ -41,7 +38,7 @@ export const useRegister = () => {
       setFieldErrors({});
 
       if (isAxiosError(error) && error.response) {
-        const errorData = error.response.data as ApiErrorResponse;
+        const errorData = error.response.data as ApiErrorResponseError;
 
         if (errorData.field) {
           setFieldErrors({ [errorData.field]: errorData.message });

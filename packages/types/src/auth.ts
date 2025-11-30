@@ -1,5 +1,3 @@
-// export type Role = 'candidate' | 'employer' | 'admin';
-
 export interface SafeUser {
   id: number;
   email: string;
@@ -11,4 +9,10 @@ export interface SafeUser {
 export interface AuthResponse {
   user: SafeUser;
   token: string;
+}
+
+export interface ApiErrorResponseError {
+  message: string;
+  field?: string;
+  status?: number;
 }

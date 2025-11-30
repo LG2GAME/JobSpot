@@ -1,9 +1,10 @@
 import { isAxiosError } from "axios";
 import { useAuthStore } from "@store/authStore";
-import type { ApiErrorResponse, AuthResponse, LoginCredentials } from "@ltypes";
+import type { LoginCredentials } from "@ltypes";
 import { useState } from "react";
 import { api } from "@api/api";
 import { useNavigate } from "react-router-dom";
+import type { ApiErrorResponseError, AuthResponse } from "@jobspot/types";
 
 export const useLogin = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ export const useLogin = () => {
       setFieldErrors({});
 
       if (isAxiosError(error) && error.response) {
-        const errorData = error.response.data as ApiErrorResponse;
+        const errorData = error.response.data as ApiErrorResponseError;
 
         if (errorData.field) {
           setFieldErrors({ [errorData.field]: errorData.message });

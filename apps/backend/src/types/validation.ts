@@ -8,8 +8,3 @@ export interface LoginInputs {
   email: string;
   password: string;
 }
-
-export type ValidationError =
-  | { field: string; message: string; status: number }
-  | null
-  | undefined;

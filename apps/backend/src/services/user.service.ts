@@ -1,4 +1,4 @@
-import type { AuthResponse, SafeUser } from "@ltypes";
+import type { AuthResponse, SafeUser } from "@jobspot/types";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import prisma from "@lib/prisma";

@@ -1,10 +1,11 @@
-import { LoginInputs, RegistrationInputs, ValidationError } from "@ltypes";
+import { ApiErrorResponseError } from "@jobspot/types";
+import { LoginInputs, RegistrationInputs } from "@ltypes";
 
 export function validateRegistration({
   email,
   password,
   confirmPassword,
-}: RegistrationInputs): ValidationError {
+}: RegistrationInputs): ApiErrorResponseError | null {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!email) {
